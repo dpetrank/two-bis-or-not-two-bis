@@ -5,16 +5,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Order | 2 Bis or Not 2 Bis</title>
-  <link href="styles.css" rel="stylesheet" />
+  <link href="../styles.css" rel="stylesheet" />
 </head>
 
-<body class="bg-gray-50 text-gray-900 font-sans">
-  <header class="bg-orange-500 p-4 flex justify-between items-center text-white">
-    <div class="text-2xl font-bold">2 Bis or Not 2 Bis</div>
+<body class="bg-gray-50 text-gray-900 font-sans m-0 p-0">
+  <header class="bg-yellow-500 flex justify-between items-center text-white">
+    <div class="flex items-center">
+      <img src="../images/logo.PNG" alt="Logo" class="h-10 w-auto ml-2" />
+      <div class="text-2xl font-bold"><span dir="ltr">2 Bis or Not 2 Bis</span></div>
+    </div>
   </header>
-
+  <div class="container mx-auto px-4 max-w-6xl pt-6">
   <div class="p-4 max-w-xl mx-auto bg-white rounded-2xl shadow mt-8">
-    <img src="images/banner-moishale.PNG" alt="Restaurant Banner"
+    <img src="../images/banner-moishale.PNG" alt="Restaurant Banner"
       class="rounded-2xl mb-4 w-full h-48 md:h-64 object-cover" />
     <h1 id="restaurantName" class="text-xl font-bold mb-2">הסושי של מוישלה</h1>
     <h2 id="description" class="text-gray-600 mb-2">סושי בתפזורת מקורי כמו בסין</h2>
@@ -49,6 +52,7 @@
     const restaurant = urlParams.get('restaurant') || "Unknown Restaurant";
     document.getElementById('restaurantName').innerText = `Order from: ${restaurant.replaceAll('+', ' ')}`;
   </script>
+  </div>
 </body>
 
 </html>
