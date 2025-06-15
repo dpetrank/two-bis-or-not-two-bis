@@ -47,12 +47,6 @@
       </form>
     </div>
   </div>
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const restaurant = urlParams.get('restaurant') || "Unknown Restaurant";
-    document.getElementById('restaurantName').innerText = `Order from: ${restaurant.replaceAll('+', ' ')}`;
-  </script>
-  
 </body>
 
 </html>
