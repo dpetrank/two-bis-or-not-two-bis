@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order | 2 Bis or Not 2 Bis</title>
+  <link href="styles.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+  <header class="bg-orange-500 p-4 flex justify-between items-center text-white">
+    <div class="text-2xl font-bold">2 Bis or Not 2 Bis</div>
+  </header>
+
+  <div class="p-4 max-w-xl mx-auto bg-white rounded shadow mt-8">
+    <img src="images/banner-moishale.PNG" alt="Restaurant Banner" class="rounded mb-4 w-full h-48 md:h-64 object-cover" />
+    <h1 id="restaurantName" class="text-xl font-bold mb-2">הסושי של מוישלה</h1>
+    <h2 id="description" class="text-gray-600 mb-2">הכרמל 52</h2>
+    <h2 id="description" class="text-gray-900 font-semibold mb-4">סושי בתפזורת מקורי מתל אביב</h2>
+
+    <form class="space-y-4">
+      <div>
+        <label class="block font-semibold mb-1">Your Name</label>
+        <input type="text" class="w-full p-2 border rounded" required />
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Select Meals</label>
+        <div class="space-y-2">
+          <label><input type="checkbox" class="mr-2" /> Meal 1: Burger Combo</label><br/>
+          <label><input type="checkbox" class="mr-2" /> Meal 2: Vegan Bowl</label><br/>
+          <label><input type="checkbox" class="mr-2" /> Meal 3: Sushi Deluxe</label><br/>
+          <label><input type="checkbox" class="mr-2" /> Meal 4: Pasta Alfredo</label>
+        </div>
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Delivery Address</label>
+        <input type="text" class="w-full p-2 border rounded" required />
+      </div>
+      <button type="submit" class="bg-orange-500 text-white px-4 py-2 rounded w-full">Send Order</button>
+    </form>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const restaurant = urlParams.get('restaurant') || "Unknown Restaurant";
+    document.getElementById('restaurantName').innerText = `Order from: ${restaurant.replaceAll('+',' ')}`;
+  </script>
+</body>
+</html>
