@@ -7,18 +7,16 @@
   <title>2 Bis or Not 2 Bis</title>
   <link href="styles.css" rel="stylesheet" />
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans">
-  <header class="bg-orange-500 p-4 flex justify-between items-center text-white">
-    <div class="text-2xl font-bold">2 Bis or Not 2 Bis</div>
-    <div class="w-1/2">
-      <input type="text" placeholder="Search for food, restaurants..." class="w-full p-2 rounded text-black"/>
-    </div>
-    <div><button class="border px-4 py-2 rounded">Login</button></div>
-  </header>
-
+<body class="bg-gray-50 text-gray-900 font-sans m-0 p-0">
+  <div class="w-full bg-yellow-500 h-4 mb-6">
+    <header class="bg-yellow-500 p-4 flex justify-between items-center text-white">
+      <div class="text-2xl font-bold">2 Bis or Not 2 Bis</div>
+    </header>
+  </div>
+  <div class="container mx-auto px-4 max-w-6xl pt-6">
   <div class="flex flex-col md:flex-row p-4 gap-4">
     <aside class="md:w-1/4 bg-white p-4 rounded shadow">
-      <h2 class="font-bold mb-2">Food Types</h2>
+      <h2 class="font-bold mb-2">סוגי אוכל</h2>
       <ul class="space-y-2">
         <li>🍕 Pizza</li>
         <li>🥩 Meat</li>
@@ -28,9 +26,9 @@
         <li>🍝 Pasta</li>
         <li>☕ Cafe</li>
       </ul>
-      <h2 class="font-bold mt-4 mb-2">Filters</h2>
+      <h2 class="font-bold mt-4 mb-2">סינון</h2>
       <ul class="space-y-2">
-        <li>🚴 2 Bis Delivery</li>
+        <li>🚴 2Bis Delivery</li>
         <li>⭐ Promotions</li>
         <li>🥦 Vegan</li>
         <li>🍞 Gluten Free</li>
@@ -38,10 +36,10 @@
     </aside>
 
     <main class="md:w-3/4">
-      <h1 class="text-xl font-bold mb-4">All Restaurants</h1>
+      <h1 class="text-xl font-bold mb-4">כל המסעדות</h1>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-        <a href="restaurant-moishale.html" class="block bg-white p-4 rounded shadow hover:shadow-lg">
+        <a href="menus/restaurant-moishale.html" class="block bg-white p-4 rounded shadow hover:shadow-lg">
           <img src="images/banner-moishale.PNG" alt="Restaurant Image" class="rounded mb-2 object-cover w-full h-48">
           <h2 class="text-lg font-bold mb-1">הסושי של מוישלה</h2>
           <p class="text-sm text-gray-600 mb-1">סושי, תפזורת</p>
@@ -49,32 +47,33 @@
           <span class="inline-block bg-green-200 text-green-800 px-2 py-1 text-xs rounded">New</span>
         </a>
 
-        <a href="restaurant.html?restaurant=Hamlet+Sushi" class="block bg-white p-4 rounded shadow hover:shadow-lg">
+        <a href="menus/menu.html" class="block bg-white p-4 rounded shadow hover:shadow-lg">
           <img src="https://via.placeholder.com/400x200" alt="Restaurant Image" class="rounded mb-2">
-          <h2 class="text-lg font-bold mb-1">Hamlet Sushi</h2>
-          <p class="text-sm text-gray-600 mb-1">Sushi, Asian</p>
-          <p class="text-sm text-gray-600 mb-1">⭐ 4.2 | 40-50₪ | 25 min</p>
-          <span class="inline-block bg-yellow-200 text-yellow-800 px-2 py-1 text-xs rounded">20% Off</span>
+          <h2 class="text-lg font-bold mb-1">מסעדה 2</h2>
+          <p class="text-sm text-gray-600 mb-1">קטגוריות</p>
+          <p class="text-sm text-gray-600 mb-1">⭐ 0.0 | 0-0₪ | 0 min</p>
+          <span class="inline-block bg-yellow-200 text-yellow-800 px-2 py-1 text-xs rounded">0% Off</span>
         </a>
 
-        <a href="restaurant.html?restaurant=To+Bis+Or+Not+Pasta" class="block bg-white p-4 rounded shadow hover:shadow-lg">
+        <a href="menus/menu.html" class="block bg-white p-4 rounded shadow hover:shadow-lg">
           <img src="https://via.placeholder.com/400x200" alt="Restaurant Image" class="rounded mb-2">
-          <h2 class="text-lg font-bold mb-1">To Bis Or Not Pasta</h2>
-          <p class="text-sm text-gray-600 mb-1">Italian, Pasta</p>
-          <p class="text-sm text-gray-600 mb-1">⭐ 4.7 | 60-70₪ | 35 min</p>
+          <h2 class="text-lg font-bold mb-1">מסעדה 3</h2>
+          <p class="text-sm text-gray-600 mb-1">קטגוריות</p>
+          <p class="text-sm text-gray-600 mb-1">⭐ 0.0 | 0-0₪ | 0 min</p>
           <span class="inline-block bg-green-200 text-green-800 px-2 py-1 text-xs rounded">New</span>
         </a>
 
-        <a href="restaurant.html?restaurant=Ophelia+Bowls" class="block bg-white p-4 rounded shadow hover:shadow-lg">
+        <a href="menus/menu.html" class="block bg-white p-4 rounded shadow hover:shadow-lg">
           <img src="https://via.placeholder.com/400x200" alt="Restaurant Image" class="rounded mb-2">
-          <h2 class="text-lg font-bold mb-1">Ophelia Bowls</h2>
-          <p class="text-sm text-gray-600 mb-1">Vegan, Salads</p>
-          <p class="text-sm text-gray-600 mb-1">⭐ 4.8 | 30-40₪ | 20 min</p>
-          <span class="inline-block bg-yellow-200 text-yellow-800 px-2 py-1 text-xs rounded">10% Off</span>
+          <h2 class="text-lg font-bold mb-1">מסעדה 4</h2>
+          <p class="text-sm text-gray-600 mb-1">קטגוריות</p>
+          <p class="text-sm text-gray-600 mb-1">⭐ 0.0 | 0-0₪ | 0 min</p>
+          <span class="inline-block bg-yellow-200 text-yellow-800 px-2 py-1 text-xs rounded">0% Off</span>
         </a>
 
       </div>
     </main>
   </div>
+</div>
 </body>
 </html>
