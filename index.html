@@ -34,7 +34,7 @@
       <div class="relative text-black">
         <button onclick="toggleDropdown()" class="flex items-center space-x-2 bg-white rounded-full px-3 py-1 hover:bg-gray-100 focus:outline-none" id="dropdownToggle">
           <img src="images/delivery-default.PNG" alt="Selected Delivery Man" id="selectedImage" class="h-6 w-6 rounded-full" />
-          <span class="text-sm font-semibold text-gray-800" id="selectedName">שליח ברירת מחדל</span>
+          <span class="text-sm font-semibold text-gray-800" id="selectedName">שליח אקראי</span>
           <svg class="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
@@ -186,11 +186,10 @@
     }
 
     const deliveryOptions = [
-      { name: "שליח ברירת מחדל", img: "images/delivery-default.PNG" },
-      { name: "אבי השליח", img: "images/delivery-avi.PNG" },
-      { name: "דני דה שליח", img: "images/delivery-dani.PNG" },
-      { name: "מאיה משלוחים", img: "images/delivery-maya.PNG" }
-    ];
+  { name: "שליח אקראי", img: "images/delivery-random.PNG", info: "שליח אקראי מהמאגר" },
+  { name: "אלעד", img: "images/delivery-elad.PNG", info: "חייכן, טועם מהצ׳יפס" },
+  { name: "ג׳וקר", img: "images/delivery-joker.PNG", info: "ג׳וקר" }
+];
 
     let currentSelection = 0;
 
@@ -215,10 +214,15 @@
         item.className = `flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer ${i === currentSelection ? 'bg-gray-100 font-semibold' : ''}`;
         item.onclick = () => selectDelivery(i);
         item.innerHTML = `
-          <img src="${option.img}" class="h-6 w-6 rounded-full mr-2" />
-          <span class="text-sm text-gray-800">${option.name}</span>
-          ${i === currentSelection ? '<span class="ml-auto text-green-500 text-xs">✔</span>' : ''}
-        `;
+  <div class="flex items-start gap-3">
+    <img src="${option.img}" class="h-6 w-6 rounded-full mt-1" />
+    <div class="flex flex-col">
+      <span class="text-sm text-gray-800">${option.name}</span>
+      <span class="text-xs text-gray-500">${option.info}</span>
+    </div>
+  </div>
+  ${i === currentSelection ? '<span class="ml-auto text-green-500 text-xs">✔</span>' : ''}
+`;
         container.appendChild(item);
       });
     }
