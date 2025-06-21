@@ -24,10 +24,28 @@
   <header class="bg-yellow-500">
     <div class="max-w-6xl mx-auto px-4 md:px-32 flex justify-between items-center text-white py-4">
       <div class="flex items-center">
-        <a href="../index.html" class="flex items-center">
+        <a href="index.html" class="flex items-center">
           <img src="images/logo.PNG" alt="Logo" class="h-10 w-auto ml-2" />
           <div class="text-2xl font-bold"><span dir="ltr">2 Bis or Not 2 Bis</span></div>
         </a>
+      </div>
+
+      <!-- Delivery Dropdown -->
+      <div class="relative text-black">
+        <button onclick="toggleDropdown()"
+          class="flex items-center space-x-3 space-x-reverse bg-white rounded-full px-3 py-1 hover:bg-gray-100 focus:outline-none"
+          id="dropdownToggle">
+          <img src="images/delivery-random.PNG" alt="Selected Delivery Man" id="selectedImage"
+            class="h-6 w-6 rounded-full" />
+          <span class="text-sm font-semibold text-gray-800" id="selectedName">שליח אקראי</span>
+          <svg class="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        <div id="dropdownMenu" class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-lg z-10 hidden">
+          <ul id="dropdownOptions" class="py-1"></ul>
+        </div>
       </div>
     </div>
   </header>
@@ -45,10 +63,10 @@
 
     <!-- Content -->
     <h1 class="text-xl font-bold mb-4">כל המסעדות</h1>
-
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-      <a href="menus/menu-moishale.html" class="block bg-white p-4 rounded-2xl shadow hover:shadow-lg">
+      <!-- Card 1 -->
+      <a onclick="showSushiModal()" class="cursor-pointer block bg-white p-4 rounded-2xl shadow hover:shadow-lg">
         <img src="images/banner-moishale.PNG" alt="Restaurant Image" class="rounded-2xl mb-2 object-cover w-full h-48">
         <h2 class="text-lg font-bold mb-1">הסושי של מוישלה</h2>
         <p class="text-sm text-gray-600 mb-1">סושי, תפזורת</p>
@@ -56,6 +74,7 @@
         <span class="inline-block bg-green-200 text-green-800 px-2 py-1 text-xs rounded">New</span>
       </a>
 
+      <!-- Card 2 -->
       <a href="menus/menu.html" class="block bg-white p-4 rounded-2xl shadow hover:shadow-lg">
         <img src="https://via.placeholder.com/400x200" alt="Restaurant Image" class="rounded-2xl mb-2">
         <h2 class="text-lg font-bold mb-1">מסעדה 2</h2>
@@ -63,14 +82,187 @@
         <p class="text-sm text-gray-600 mb-1">⭐ 0.0 | 0-0₪ | 0 דק׳</p>
         <span class="inline-block bg-yellow-200 text-yellow-800 px-2 py-1 text-xs rounded">0% Off</span>
       </a>
-
     </div>
-
   </main>
 
-  <footer class="text-center text-sm text-gray-400 py-4">
+  <!-- Sushi Restaurant Modal -->
+  <div id="sushiModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-center px-4 py-10 hidden">
+    <!-- Outer White Box -->
+    <div id="sushiModalContent"
+      class="bg-white rounded-2xl shadow-xl max-w-xl w-full relative overflow-y-auto max-h-[90vh]">
+
+      <!-- Close Button -->
+      <button onclick="hideSushiModal()"
+        class="absolute top-3 right-3 text-white hover:text-red-600 text-2xl font-bold z-10">
+        &times;
+      </button>
+
+      <!-- All Scrollable Content Starts Here -->
+      <div class="p-6">
+
+        <!-- Restaurant Header (part of scrollable content) -->
+        <div class="-m-6 -mb-0 relative">
+          <img src="images/banner-moishale.PNG" alt="Restaurant Banner"
+            class="w-full h-48 md:h-64 object-cover rounded-t-2xl" />
+          <div class="bg-white rounded-2xl p-1 shadow absolute -bottom-12 left-6 inline-block">
+            <img src="images/logo-moishale.PNG" alt="Restaurant Logo" class="h-24 w-24 object-contain rounded-xl">
+          </div>
+        </div>
+
+        <!-- Info Text -->
+        <div class="pt-16 pb-6">
+          <h1 class="text-xl font-bold mb-2">הסושי של מוישלה</h1>
+          <h2 class="text-gray-600 font-bold mb-2">סושי בתפזורת מקורי כמו בסין</h2>
+          <h2 class="text-gray-600 mb-6">הכרמל 52</h2>
+
+          <!-- Delivery Time -->
+          <div class="inline-flex items-center bg-white rounded-xl px-3 py-1 pl-4 mb-4 shadow max-w-fit">
+            <img src="images/scooter.png" alt="Delivery Icon" class="h-12 w-auto ml-3">
+            <div class="text-right">
+              <div class="text font-bold text-gray-800">זמן המשלוח* : 70 דק׳</div>
+            </div>
+          </div>
+
+          <!-- Full Form -->
+          <form class="space-y-4">
+            <div>
+              <label class="block font-semibold mb-1">סושי בתפזורת</label>
+              <div class="space-y-2">
+                <label><input type="radio" name="sushiAmount" class="ml-2 align-middle" /> שקית 200 גרם</label><br />
+                <label><input type="radio" name="sushiAmount" class="ml-2 align-middle" /> שקית 500 גרם</label><br />
+                <label><input type="radio" name="sushiAmount" class="ml-2 align-middle" /> שקית 1 ק״ג</label><br />
+                <label><input type="radio" name="sushiAmount" class="ml-2 align-middle" /> ארגז 2 ק״ג</label>
+              </div>
+            </div>
+
+            <div>
+              <label class="block font-semibold mb-1">טיבעוני</label>
+              <div class="space-y-2">
+                <label><input type="checkbox" class="ml-2 align-middle" /> להשתדל לשים רק סושי טיבעוני (סושי
+                  ירוק)</label><br />
+              </div>
+            </div>
+
+            <div>
+              <label class="block font-semibold mb-1">הערות למסעדה</label>
+              <input type="text" class="w-full p-2 border rounded-2xl" required />
+            </div>
+
+            <!-- Green Button -->
+            <div class="flex justify-center mt-4 mb-8">
+              <button type="button" onclick="showPopup()"
+                class="bg-green-500 text-white px-8 py-2 rounded-2xl hover:bg-green-600 transition">
+                בצע הזמנה
+              </button>
+            </div>
+        </div>
+
+        <div class="text-xs font-bold text-gray-800 text-center">
+          * לא בהכרח כולל זמני הכנה
+        </div>
+        </form>
+      </div>
+    </div>
+    <!-- End scrollable content -->
+  </div>
+  </div>
+
+  <div id="popup" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden z-50">
+    <div class="bg-white p-6 rounded-2xl shadow text-center relative">
+      <button onclick="closePopup()"
+        class="absolute top-2 right-2 text-gray-400 hover:text-black text-xl font-bold">&times;</button>
+      <p class="text-lg font-bold mb-4">
+        אופס!<br>
+        נראה שהלחיצה שלכם הקריסה את השירות.
+      </p>
+    </div>
+  </div>
+
+  <footer class="text-center text-sm text-gray-400 py-4 pb-2">
     אתר זה הוא פרודיה בלבד
   </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    function showSushiModal() {
+      document.getElementById('sushiModal').classList.remove('hidden');
+    }
+
+    function hideSushiModal() {
+      document.getElementById('sushiModal').classList.add('hidden');
+    }
+
+    const deliveryOptions = [
+      { name: "שליח אקראי", img: "images/delivery-random.PNG", info: "שליח אקראי מהמאגר" },
+      { name: "אלעד", img: "images/delivery-elad.PNG", info: "חייכן, טועם מהצ׳יפס" },
+      { name: "ג׳וקר", img: "images/delivery-joker.PNG", info: "ג׳וקר" }
+    ];
+
+    let currentSelection = 0;
+
+    function toggleDropdown() {
+      document.getElementById('dropdownMenu').classList.toggle('hidden');
+    }
+
+    function selectDelivery(index) {
+      currentSelection = index;
+      const selected = deliveryOptions[index];
+      document.getElementById('selectedName').textContent = selected.name;
+      document.getElementById('selectedImage').src = selected.img;
+      renderDropdown();
+      toggleDropdown();
+    }
+
+    function renderDropdown() {
+      const container = document.getElementById('dropdownOptions');
+      container.innerHTML = "";
+      deliveryOptions.forEach((option, i) => {
+        const item = document.createElement('li');
+        item.className = `flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer ${i === currentSelection ? 'bg-gray-100 font-semibold' : ''}`;
+        item.onclick = () => selectDelivery(i);
+        item.innerHTML = `
+  <div class="flex items-start gap-3">
+    <img src="${option.img}" class="h-6 w-6 rounded-full mt-1" />
+    <div class="flex flex-col">
+      <span class="text-sm text-gray-800">${option.name}</span>
+      <span class="text-xs text-gray-500">${option.info}</span>
+    </div>
+  </div>
+`;
+        container.appendChild(item);
+      });
+    }
+
+    document.addEventListener('click', function (event) {
+      const menu = document.getElementById('dropdownMenu');
+      const toggle = document.getElementById('dropdownToggle');
+      if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+        menu.classList.add('hidden');
+      }
+    });
+
+    renderDropdown();
+  </script>
+
+  <script>
+    // Close modal if clicking outside the modal content
+    document.getElementById('sushiModal').addEventListener('click', function (event) {
+      const modalContent = document.getElementById('sushiModalContent');
+      if (!modalContent.contains(event.target)) {
+        hideSushiModal();
+      }
+    });
+  </script>
+
+  <script>
+    function showPopup() {
+      document.getElementById('popup').classList.remove('hidden');
+    }
+
+    function closePopup() {
+      document.getElementById('popup').classList.add('hidden');
+    }
+  </script>
 
 </body>
 
