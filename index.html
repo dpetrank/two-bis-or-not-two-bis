@@ -21,16 +21,37 @@
 <body class="bg-gray-50 text-gray-900 font-sans">
 
   <!-- Header -->
-  <header class="bg-yellow-500">
-    <div class="max-w-6xl mx-auto px-4 md:px-32 flex justify-between items-center text-white py-4">
-      <div class="flex items-center">
-        <a href="../index.html" class="flex items-center">
-          <img src="images/logo.PNG" alt="Logo" class="h-10 w-auto ml-2" />
-          <div class="text-2xl font-bold"><span dir="ltr">2 Bis or Not 2 Bis</span></div>
-        </a>
+<header class="bg-yellow-500">
+  <div class="max-w-6xl mx-auto px-4 md:px-32 flex justify-between items-center text-white py-4">
+
+    <!-- Logo + Title -->
+    <div class="flex items-center">
+      <a href="../index.html" class="flex items-center">
+        <img src="images/logo.PNG" alt="Logo" class="h-10 w-auto ml-2" />
+        <div class="text-2xl font-bold"><span dir="ltr">2 Bis or Not 2 Bis</span></div>
+      </a>
+    </div>
+
+    <!-- Delivery Dropdown -->
+    <div class="relative text-black">
+      <button onclick="toggleDropdown()" class="flex items-center space-x-2 bg-white rounded-full px-3 py-1 hover:bg-gray-100 focus:outline-none" id="dropdownToggle">
+        <img src="images/delivery-default.PNG" alt="Selected Delivery Man" id="selectedImage" class="h-6 w-6 rounded-full" />
+        <span class="text-sm font-semibold text-gray-800" id="selectedName">שליח ברירת מחדל</span>
+        <svg class="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      <!-- Dropdown menu -->
+      <div id="dropdownMenu" class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-lg z-10 hidden">
+        <ul id="dropdownOptions" class="py-1">
+          <!-- Options will be injected here -->
+        </ul>
       </div>
     </div>
-  </header>
+
+  </div>
+</header>
 
   <!-- Main Content -->
   <main class="max-w-6xl mx-auto px-4 md:px-32 pt-6 pb-16">
@@ -71,6 +92,61 @@
   <footer class="text-center text-sm text-gray-400 py-4">
     אתר זה הוא פרודיה בלבד
   </footer>
+
+  <script>
+    const deliveryOptions = [
+      { name: "שליח ברירת מחדל", img: "images/delivery-default.PNG" },
+      { name: "אבי השליח", img: "images/delivery-avi.PNG" },
+      { name: "דני דה שליח", img: "images/delivery-dani.PNG" },
+      { name: "מאיה משלוחים", img: "images/delivery-maya.PNG" }
+    ];
+  
+    let currentSelection = 0; // Default index
+  
+    function toggleDropdown() {
+      document.getElementById('dropdownMenu').classList.toggle('hidden');
+    }
+  
+    function selectDelivery(index) {
+      currentSelection = index;
+      const selected = deliveryOptions[index];
+      document.getElementById('selectedName').textContent = selected.name;
+      document.getElementById('selectedImage').src = selected.img;
+      renderDropdown();
+      toggleDropdown();
+    }
+  
+    function renderDropdown() {
+      const container = document.getElementById('dropdownOptions');
+      container.innerHTML = "";
+      deliveryOptions.forEach((option, i) => {
+        const isSelected = i === currentSelection;
+        const item = document.createElement('li');
+        item.className = `flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer ${isSelected ? 'bg-gray-100 font-semibold' : ''}`;
+        item.onclick = () => selectDelivery(i);
+  
+        item.innerHTML = `
+          <img src="${option.img}" class="h-6 w-6 rounded-full mr-2" />
+          <span class="text-sm text-gray-800">${option.name}</span>
+          ${isSelected ? '<span class="ml-auto text-green-500 text-xs">✔</span>' : ''}
+        `;
+  
+        container.appendChild(item);
+      });
+    }
+  
+    // Close dropdown if clicking outside
+    document.addEventListener('click', function (event) {
+      const menu = document.getElementById('dropdownMenu');
+      const toggle = document.getElementById('dropdownToggle');
+      if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+        menu.classList.add('hidden');
+      }
+    });
+  
+    // Render on load
+    renderDropdown();
+  </script>
 
 </body>
 

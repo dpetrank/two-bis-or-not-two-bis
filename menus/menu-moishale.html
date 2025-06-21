@@ -39,7 +39,7 @@
       <div class="mb-0 text-left">
         <img src="../images/banner-moishale.PNG" alt="Restaurant Banner"
           class="rounded-2xl w-full h-48 md:h-64 object-cover" />
-      
+
         <div class="bg-white rounded-2xl p-1 shadow -mt-12 ml-4 inline-block">
           <img src="../images/logo-moishale.PNG" alt="Restaurant Logo" class="h-24 w-24 object-contain rounded-xl">
         </div>
@@ -77,7 +77,8 @@
           <input type="text" class="w-full p-2 border rounded-2xl" required />
         </div>
         <div class="flex justify-center">
-          <button type="button" onclick="showPopup()" class="bg-green-500 text-white px-8 py-2 rounded-2xl hover:bg-green-600 transition">
+          <button type="button" onclick="showPopup()"
+            class="bg-green-500 text-white px-8 py-2 rounded-2xl hover:bg-green-600 transition">
             בצע הזמנה
           </button>
         </div>
@@ -94,7 +95,8 @@
 
   <div id="popup" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden z-50">
     <div class="bg-white p-6 rounded-2xl shadow text-center relative">
-      <button onclick="closePopup()" class="absolute top-2 left-2 text-gray-400 hover:text-black text-xl font-bold">&times;</button>
+      <button onclick="closePopup()"
+        class="absolute top-2 left-2 text-gray-400 hover:text-black text-xl font-bold">&times;</button>
       <p class="text-lg font-bold mb-4">
         אופס!<br>
         נראה שהלחיצה שלכם הקריסה את השירות.
@@ -106,7 +108,7 @@
     function showPopup() {
       document.getElementById('popup').classList.remove('hidden');
     }
-  
+
     function closePopup() {
       document.getElementById('popup').classList.add('hidden');
     }
