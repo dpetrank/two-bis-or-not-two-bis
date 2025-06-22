@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>המחשבון - 2 Bis or Not 2 Bis</title>
+  <link href="../styles.css" rel="stylesheet" />
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    
+    .calculator {
+      background: linear-gradient(145deg, #f0f0f0, #cacaca);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+    
+    .calculator-display {
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: left;
+      font-family: 'Courier New', monospace;
+      font-size: 24px;
+      margin-bottom: 20px;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    
+    .calculator-buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    
+    .calculator-btn {
+      background: linear-gradient(145deg, #ffffff, #e6e6e6);
+      border: none;
+      border-radius: 15px;
+      padding: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 5px 5px 10px #d1d1d1, -5px -5px 10px #ffffff;
+    }
+    
+    .calculator-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 7px 7px 15px #d1d1d1, -7px -7px 15px #ffffff;
+    }
+    
+    .calculator-btn:active {
+      transform: translateY(0);
+      box-shadow: inset 5px 5px 10px #d1d1d1, inset -5px -5px 10px #ffffff;
+    }
+    
+    .calculator-btn.operator {
+      background: linear-gradient(145deg, #ff9500, #ff8000);
+      color: white;
+    }
+    
+    .calculator-btn.equals {
+      background: linear-gradient(145deg, #007aff, #0056cc);
+      color: white;
+    }
+    
+    .calculator-btn.clear {
+      background: linear-gradient(145deg, #ff3b30, #cc2e26);
+      color: white;
+    }
+    
+    .calculator-btn.span-2 {
+      grid-column: span 2;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-sans">
+
+  <!-- Header -->
+  <header class="bg-yellow-500">
+    <div class="max-w-6xl mx-auto px-4 md:px-32 flex justify-between items-center text-white py-4">
+      <div class="flex items-center">
+        <a href="../index.html" class="flex items-center">
+          <img src="../images/logo.PNG" alt="Logo" class="h-10 w-auto ml-2" />
+          <div class="text-2xl font-bold"><span dir="ltr">2 Bis or Not 2 Bis</span></div>
+        </a>
+      </div>
+
+      <!-- Back Button -->
+      <a href="../index.html" class="text-white hover:text-gray-200 font-semibold">
+        ← חזור לדף הבית
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-4 md:px-32 pt-6 pb-16">
+    
+    <!-- Restaurant Header -->
+    <div class="relative mb-6">
+      <div class="w-full h-48 md:h-64 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center">
+        <div class="text-center text-white">
+          <h1 class="text-4xl font-bold mb-2">המחשבון</h1>
+          <p class="text-xl">מחשבון</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl p-1 shadow absolute -bottom-12 left-6 inline-block">
+        <div class="h-24 w-24 bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl flex items-center justify-center">
+          <span class="text-white text-2xl font-bold">🧮</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- White Container starting from banner level -->
+    <div class="bg-white rounded-2xl shadow-lg p-6 -mt-12">
+      <!-- Restaurant Info -->
+      <div class="pt-16 pb-6">
+        <h1 class="text-2xl font-bold mb-2">המחשבון</h1>
+        <h2 class="text-gray-600 font-bold mb-2">מחשבון</h2>
+        <h2 class="text-gray-600 mb-6">מחשבון</h2>
+
+        <!-- Delivery Time -->
+        <div class="inline-flex items-center bg-gray-50 rounded-xl px-3 py-1 pl-4 mb-6 shadow max-w-fit">
+          <img src="../images/scooter.png" alt="Delivery Icon" class="h-12 w-auto ml-3">
+          <div class="text-right">
+            <div class="text font-bold text-gray-800">זמן המשלוח* : מחשבון</div>
+          </div>
+        </div>
+
+        <!-- Calculator Form -->
+        <form class="space-y-6">
+          <div>
+            <label class="block font-semibold mb-3 text-lg">מחשבון</label>
+            <div class="max-w-md mx-auto">
+              <div class="calculator">
+                <div class="calculator-display" id="display">0</div>
+                <div class="calculator-buttons">
+                  <button type="button" class="calculator-btn clear" onclick="clearDisplay()">C</button>
+                  <button type="button" class="calculator-btn operator" onclick="appendOperator('(')">(</button>
+                  <button type="button" class="calculator-btn operator" onclick="appendOperator(')')">)</button>
+                  <button type="button" class="calculator-btn operator" onclick="appendOperator('/')">/</button>
+                  
+                  <button type="button" class="calculator-btn" onclick="appendNumber('7')">7</button>
+                  <button type="button" class="calculator-btn" onclick="appendNumber('8')">8</button>
+                  <button type="button" class="calculator-btn" onclick="appendNumber('9')">9</button>
+                  <button type="button" class="calculator-btn operator" onclick="appendOperator('*')">×</button>
+                  
+                  <button type="button" class="calculator-btn" onclick="appendNumber('4')">4</button>
+                  <button type="button" class="calculator-btn" onclick="appendNumber('5')">5</button>
+                  <button type="button" class="calculator-btn" onclick="appendNumber('6')">6</button>
+                  <button type="button" class="calculator-btn operator" onclick="appendOperator('-')">-</button>
+                  
+                  <button type="button" class="calculator-btn" onclick="appendNumber('1')">1</button>
+                  <button type="button" class="calculator-btn" onclick="appendNumber('2')">2</button>
+                  <button type="button" class="calculator-btn" onclick="appendNumber('3')">3</button>
+                  <button type="button" class="calculator-btn operator" onclick="appendOperator('+')">+</button>
+                  
+                  <button type="button" class="calculator-btn span-2" onclick="appendNumber('0')">0</button>
+                  <button type="button" class="calculator-btn" onclick="appendNumber('.')">.</button>
+                  <button type="button" class="calculator-btn equals" onclick="calculate()">=</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <div class="text-xs font-bold text-gray-800 text-center mt-4">
+          * מחשבון
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Popup -->
+  <div id="popup" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden z-50">
+    <div class="bg-white p-8 rounded-2xl shadow text-center relative max-w-md mx-4">
+      <button onclick="closePopup()"
+        class="absolute top-3 right-3 text-gray-400 hover:text-black text-2xl font-bold">&times;</button>
+      <p class="text-xl font-bold mb-4">
+        אופס!<br>
+        נראה שהלחיצה שלכם הקריסה את השירות.
+      </p>
+    </div>
+  </div>
+
+  <footer class="text-center text-sm text-gray-400 py-4 pb-2">
+    אתר זה הוא פרודיה בלבד
+  </footer>
+
+  <script>
+    let displayValue = '0';
+    let currentExpression = '';
+    
+    function updateDisplay() {
+      document.getElementById('display').textContent = displayValue;
+    }
+    
+    function appendNumber(num) {
+      if (displayValue === '0' && num !== '.') {
+        displayValue = num;
+      } else {
+        displayValue += num;
+      }
+      currentExpression += num;
+      updateDisplay();
+    }
+    
+    function appendOperator(operator) {
+      if (operator === '*') {
+        currentExpression += '*';
+        displayValue += '×';
+      } else {
+        currentExpression += operator;
+        displayValue += operator;
+      }
+      updateDisplay();
+    }
+    
+    function clearDisplay() {
+      displayValue = '0';
+      currentExpression = '';
+      updateDisplay();
+    }
+    
+    function calculate() {
+      try {
+        const result = eval(currentExpression);
+        displayValue = result.toString();
+        currentExpression = result.toString();
+        updateDisplay();
+      } catch (error) {
+        displayValue = 'Error';
+        currentExpression = '';
+        updateDisplay();
+        setTimeout(clearDisplay, 1000);
+      }
+    }
+    
+    function showPopup() {
+      document.getElementById('popup').classList.remove('hidden');
+    }
+
+    function closePopup() {
+      document.getElementById('popup').classList.add('hidden');
+    }
+  </script>
+
+</body>
+
+</html> 
