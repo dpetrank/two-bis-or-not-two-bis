@@ -150,6 +150,41 @@
         </div>
       </div>
     </div>
+
+    <!-- National Anthem Section -->
+    <div class="bg-white rounded-2xl shadow p-6 mt-6">
+      <div class="flex items-center justify-between cursor-pointer" onclick="toggleAnthem()">
+        <h2 class="text-lg font-semibold text-gray-800">ההמנון הלאומי</h2>
+        <svg id="anthemArrow" class="h-5 w-5 text-gray-600 transform transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+      
+      <!-- Anthem Content -->
+      <div id="anthemContent" class="hidden mt-4">
+        <div class="relative p-6 rounded-lg overflow-hidden" style="background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('images/national-flag.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 300px;">
+          <div class="text-center space-y-4">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">התקווה</h3>
+            
+            <div class="space-y-3 text-gray-800 leading-relaxed">
+              <p class="text-lg">
+                כָּל עוֹד בַּלֵּבָב פְּנִימָה<br>
+                נֶפֶשׁ יְהוּדִי הוֹמִיָּה<br>
+                וּלְפַאֲתֵי מִזְרָח קָדִימָה<br>
+                עַיִן לְצִיּוֹן צוֹפִיָּה
+              </p>
+              
+              <p class="text-lg">
+                עוֹד לֹא אָבְדָה תִּקְוָתֵנוּ<br>
+                הַתִּקְוָה בַּת שְׁנוֹת אַלְפַּיִם<br>
+                לִהְיוֹת עַם חָפְשִׁי בְּאַרְצֵנוּ<br>
+                אֶרֶץ צִיּוֹן וִירוּשָׁלַיִם
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer class="text-center text-sm text-gray-400 py-4 pb-2">
@@ -222,6 +257,19 @@
           container.className = 'flex items-center p-3 rounded-lg border-2 border-gray-200 bg-gray-50 cursor-pointer';
         }
       });
+    }
+
+    function toggleAnthem() {
+      const anthemContent = document.getElementById('anthemContent');
+      const arrow = document.getElementById('anthemArrow');
+      
+      if (anthemContent.classList.contains('hidden')) {
+        anthemContent.classList.remove('hidden');
+        arrow.classList.add('transform', 'rotate-180');
+      } else {
+        anthemContent.classList.add('hidden');
+        arrow.classList.remove('transform', 'rotate-180');
+      }
     }
   </script>
 
