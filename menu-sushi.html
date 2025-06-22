@@ -154,13 +154,6 @@
     function closePopup() {
       document.getElementById('popup').classList.add('hidden');
     }
-
-    // Close popup if clicking outside
-    document.getElementById('popup').addEventListener('click', function (event) {
-      if (event.target === this) {
-        closePopup();
-      }
-    });
   </script>
 
 </body>
