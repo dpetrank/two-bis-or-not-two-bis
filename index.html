@@ -30,26 +30,8 @@
         </a>
       </div>
 
-      <!-- Delivery Dropdown -->
-      <div class="relative text-black">
-        <button onclick="toggleDropdown()"
-          class="flex items-center space-x-3 space-x-reverse bg-white rounded-full px-3 py-1 hover:bg-gray-100 focus:outline-none"
-          id="dropdownToggle">
-          <img src="images/delivery-random.PNG" alt="Selected Delivery Man" id="selectedImage"
-            class="h-6 w-6 rounded-full" />
-          <span class="text-sm font-semibold text-gray-800" id="selectedName">אקראי</span>
-          <svg class="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-
-        <div id="dropdownMenu" class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-lg z-10 hidden">
-          <ul id="dropdownOptions" class="py-1"></ul>
-        </div>
-      </div>
-
       <!-- Settings Button -->
-      <a href="settings.html" class="flex items-center justify-center bg-white rounded-full p-2 hover:bg-gray-100 transition-colors duration-200 ml-2">
+      <a href="settings.html" class="flex items-center justify-center bg-white rounded-full p-2 hover:bg-gray-100 transition-colors duration-200">
         <svg class="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -99,56 +81,7 @@
 
   <!-- SCRIPTS -->
   <script>
-    const deliveryOptions = [
-      { name: "אקראי", img: "images/delivery-random.PNG", info: "שליח אקראי מהמאגר" },
-      { name: "אלעד", img: "images/delivery-elad.PNG", info: "חייכן, טועם מהצ׳יפס" },
-      { name: "ג׳וקר", img: "images/delivery-joker.PNG", info: "ג׳וקר" }
-    ];
-
-    let currentSelection = 0;
-
-    function toggleDropdown() {
-      document.getElementById('dropdownMenu').classList.toggle('hidden');
-    }
-
-    function selectDelivery(index) {
-      currentSelection = index;
-      const selected = deliveryOptions[index];
-      document.getElementById('selectedName').textContent = selected.name;
-      document.getElementById('selectedImage').src = selected.img;
-      renderDropdown();
-      toggleDropdown();
-    }
-
-    function renderDropdown() {
-      const container = document.getElementById('dropdownOptions');
-      container.innerHTML = "";
-      deliveryOptions.forEach((option, i) => {
-        const item = document.createElement('li');
-        item.className = `flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer ${i === currentSelection ? 'bg-gray-100 font-semibold' : ''}`;
-        item.onclick = () => selectDelivery(i);
-        item.innerHTML = `
-  <div class="flex items-start gap-3">
-    <img src="${option.img}" class="h-6 w-6 rounded-full mt-1" />
-    <div class="flex flex-col">
-      <span class="text-sm text-gray-800">${option.name}</span>
-      <span class="text-xs text-gray-500">${option.info}</span>
-    </div>
-  </div>
-`;
-        container.appendChild(item);
-      });
-    }
-
-    document.addEventListener('click', function (event) {
-      const menu = document.getElementById('dropdownMenu');
-      const toggle = document.getElementById('dropdownToggle');
-      if (!menu.contains(event.target) && !toggle.contains(event.target)) {
-        menu.classList.add('hidden');
-      }
-    });
-
-    renderDropdown();
+    // No scripts needed for index.html anymore
   </script>
 
 </body>
