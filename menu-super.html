@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>שם המסעדה - 2 Bis or Not 2 Bis</title>
+  <link href="styles.css" rel="stylesheet" />
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-sans">
+
+  <!-- Header -->
+  <header class="bg-yellow-500">
+    <div class="max-w-6xl mx-auto px-4 md:px-32 flex justify-between items-center text-white py-4">
+      <div class="flex items-center">
+        <a href="index.html" class="flex items-center">
+          <img src="images/logo.PNG" alt="Logo" class="h-10 w-auto ml-2" />
+          <div class="text-2xl font-bold"><span dir="ltr">2 Bis or Not 2 Bis</span></div>
+        </a>
+      </div>
+
+      <!-- Back Button -->
+      <a href="index.html" class="text-white hover:text-gray-200 font-semibold">
+        ← חזור לדף הבית
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-4 md:px-32 pt-6 pb-16">
+    
+    <!-- Restaurant Header -->
+    <div class="relative mb-6">
+      <img src="images/banner-super.PNG" alt="Restaurant Banner"
+        class="w-full h-48 md:h-64 object-cover rounded-2xl" />
+      <div class="bg-white rounded-2xl p-1 shadow absolute -bottom-12 left-6 inline-block">
+        <img src="images/logo-super.PNG" alt="Restaurant Logo" class="h-24 w-24 object-contain rounded-xl">
+      </div>
+    </div>
+
+    <!-- White Container starting from banner level -->
+    <div class="bg-white rounded-2xl shadow-lg p-6 -mt-12">
+      <!-- Restaurant Info -->
+      <div class="pt-16 pb-6">
+        <h1 class="text-2xl font-bold mb-2">סופר קול</h1>
+        <h2 class="text-gray-600 font-bold mb-2">הסופר הכי גנוב בעיר</h2>
+        <h2 class="text-gray-600 mb-6">שדרות מסריק</h2>
+
+        <!-- Delivery Time -->
+        <div class="inline-flex items-center bg-gray-50 rounded-xl px-3 py-1 pl-4 mb-6 shadow max-w-fit">
+          <img src="images/scooter.png" alt="Delivery Icon" class="h-12 w-auto ml-3">
+          <div class="text-right">
+            <div class="text font-bold text-gray-800">זמן המשלוח* : 50 דק׳</div>
+          </div>
+        </div>
+
+        <!-- Menu Form -->
+        <form class="space-y-6">
+          <!-- Category Squares -->
+          <div class="mb-8">
+            <h3 class="text-xl font-bold mb-4 text-center">בחר קטגוריה</h3>
+            <div class="grid grid-cols-4 md:grid-cols-8 gap-4">
+              <a href="#fruits" class="flex flex-col items-center p-3 bg-green-100 rounded-xl hover:bg-green-200 transition cursor-pointer">
+                <div class="w-12 h-12 bg-green-500 rounded-lg mb-2 flex items-center justify-center">
+                  <span class="text-white text-xl">🍎</span>
+                </div>
+                <span class="text-sm font-medium text-center">פירות</span>
+              </a>
+              <a href="#vegetables" class="flex flex-col items-center p-3 bg-green-100 rounded-xl hover:bg-green-200 transition cursor-pointer">
+                <div class="w-12 h-12 bg-green-500 rounded-lg mb-2 flex items-center justify-center">
+                  <span class="text-white text-xl">🥬</span>
+                </div>
+                <span class="text-sm font-medium text-center">ירקות</span>
+              </a>
+              <a href="#dairy" class="flex flex-col items-center p-3 bg-blue-100 rounded-xl hover:bg-blue-200 transition cursor-pointer">
+                <div class="w-12 h-12 bg-blue-500 rounded-lg mb-2 flex items-center justify-center">
+                  <span class="text-white text-xl">🥛</span>
+                </div>
+                <span class="text-sm font-medium text-center">מוצרי חלב</span>
+              </a>
+              <a href="#meat" class="flex flex-col items-center p-3 bg-red-100 rounded-xl hover:bg-red-200 transition cursor-pointer">
+                <div class="w-12 h-12 bg-red-500 rounded-lg mb-2 flex items-center justify-center">
+                  <span class="text-white text-xl">🥩</span>
+                </div>
+                <span class="text-sm font-medium text-center">בשר</span>
+              </a>
+              <a href="#bread" class="flex flex-col items-center p-3 bg-yellow-100 rounded-xl hover:bg-yellow-200 transition cursor-pointer">
+                <div class="w-12 h-12 bg-yellow-500 rounded-lg mb-2 flex items-center justify-center">
+                  <span class="text-white text-xl">🍞</span>
+                </div>
+                <span class="text-sm font-medium text-center">לחם</span>
+              </a>
+              <a href="#beverages" class="flex flex-col items-center p-3 bg-purple-100 rounded-xl hover:bg-purple-200 transition cursor-pointer">
+                <div class="w-12 h-12 bg-purple-500 rounded-lg mb-2 flex items-center justify-center">
+                  <span class="text-white text-xl">🥤</span>
+                </div>
+                <span class="text-sm font-medium text-center">משקאות</span>
+              </a>
+              <a href="#snacks" class="flex flex-col items-center p-3 bg-orange-100 rounded-xl hover:bg-orange-200 transition cursor-pointer">
+                <div class="w-12 h-12 bg-orange-500 rounded-lg mb-2 flex items-center justify-center">
+                  <span class="text-white text-xl">🍿</span>
+                </div>
+                <span class="text-sm font-medium text-center">חטיפים</span>
+              </a>
+              <a href="#household" class="flex flex-col items-center p-3 bg-gray-100 rounded-xl hover:bg-gray-200 transition cursor-pointer">
+                <div class="w-12 h-12 bg-gray-500 rounded-lg mb-2 flex items-center justify-center">
+                  <span class="text-white text-xl">🧽</span>
+                </div>
+                <span class="text-sm font-medium text-center">בית</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Category Sections -->
+          <div class="space-y-8">
+            <!-- Fruits Section -->
+            <div id="fruits" class="border-t pt-6">
+              <h3 class="text-xl font-bold mb-4 text-green-600">פירות</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="fruits" value="apples" class="ml-3" />
+                  <span class="text-lg">תפוחים (1 ק"ג)</span>
+                  <span class="mr-auto text-green-600 font-bold">₪12.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="fruits" value="bananas" class="ml-3" />
+                  <span class="text-lg">בננות (1 ק"ג)</span>
+                  <span class="mr-auto text-green-600 font-bold">₪8.50</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="fruits" value="oranges" class="ml-3" />
+                  <span class="text-lg">תפוזים (1 ק"ג)</span>
+                  <span class="mr-auto text-green-600 font-bold">₪9.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="fruits" value="grapes" class="ml-3" />
+                  <span class="text-lg">ענבים (500 גרם)</span>
+                  <span class="mr-auto text-green-600 font-bold">₪15.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="fruits" value="strawberries" class="ml-3" />
+                  <span class="text-lg">תות שדה (400 גרם)</span>
+                  <span class="mr-auto text-green-600 font-bold">₪18.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="fruits" value="pears" class="ml-3" />
+                  <span class="text-lg">אגסים (1 ק"ג)</span>
+                  <span class="mr-auto text-green-600 font-bold">₪14.50</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Vegetables Section -->
+            <div id="vegetables" class="border-t pt-6">
+              <h3 class="text-xl font-bold mb-4 text-green-600">ירקות</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="vegetables" value="tomatoes" class="ml-3" />
+                  <span class="text-lg">עגבניות (1 ק"ג)</span>
+                  <span class="mr-auto text-green-600 font-bold">₪7.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="vegetables" value="cucumbers" class="ml-3" />
+                  <span class="text-lg">מלפפונים (1 ק"ג)</span>
+                  <span class="mr-auto text-green-600 font-bold">₪6.50</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="vegetables" value="lettuce" class="ml-3" />
+                  <span class="text-lg">חסה (יחידה)</span>
+                  <span class="mr-auto text-green-600 font-bold">₪4.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="vegetables" value="carrots" class="ml-3" />
+                  <span class="text-lg">גזר (1 ק"ג)</span>
+                  <span class="mr-auto text-green-600 font-bold">₪5.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="vegetables" value="onions" class="ml-3" />
+                  <span class="text-lg">בצל (1 ק"ג)</span>
+                  <span class="mr-auto text-green-600 font-bold">₪4.50</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="vegetables" value="potatoes" class="ml-3" />
+                  <span class="text-lg">תפוחי אדמה (2.5 ק"ג)</span>
+                  <span class="mr-auto text-green-600 font-bold">₪12.90</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Dairy Section -->
+            <div id="dairy" class="border-t pt-6">
+              <h3 class="text-xl font-bold mb-4 text-blue-600">מוצרי חלב</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="dairy" value="milk" class="ml-3" />
+                  <span class="text-lg">חלב 3% (1 ליטר)</span>
+                  <span class="mr-auto text-blue-600 font-bold">₪6.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="dairy" value="yogurt" class="ml-3" />
+                  <span class="text-lg">יוגורט טבעי (150 גרם)</span>
+                  <span class="mr-auto text-blue-600 font-bold">₪3.50</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="dairy" value="cheese" class="ml-3" />
+                  <span class="text-lg">גבינה צהובה (200 גרם)</span>
+                  <span class="mr-auto text-blue-600 font-bold">₪12.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="dairy" value="butter" class="ml-3" />
+                  <span class="text-lg">חמאה (250 גרם)</span>
+                  <span class="mr-auto text-blue-600 font-bold">₪8.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="dairy" value="cottage" class="ml-3" />
+                  <span class="text-lg">גבינת קוטג' (250 גרם)</span>
+                  <span class="mr-auto text-blue-600 font-bold">₪5.50</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="dairy" value="cream" class="ml-3" />
+                  <span class="text-lg">שמנת מתוקה (200 מ"ל)</span>
+                  <span class="mr-auto text-blue-600 font-bold">₪4.90</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Meat Section -->
+            <div id="meat" class="border-t pt-6">
+              <h3 class="text-xl font-bold mb-4 text-red-600">בשר</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="meat" value="chicken_breast" class="ml-3" />
+                  <span class="text-lg">חזה עוף (1 ק"ג)</span>
+                  <span class="mr-auto text-red-600 font-bold">₪32.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="meat" value="beef" class="ml-3" />
+                  <span class="text-lg">בשר בקר טחון (500 גרם)</span>
+                  <span class="mr-auto text-red-600 font-bold">₪45.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="meat" value="salmon" class="ml-3" />
+                  <span class="text-lg">סלמון (300 גרם)</span>
+                  <span class="mr-auto text-red-600 font-bold">₪38.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="meat" value="turkey" class="ml-3" />
+                  <span class="text-lg">הודו שלם (3 ק"ג)</span>
+                  <span class="mr-auto text-red-600 font-bold">₪89.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="meat" value="lamb" class="ml-3" />
+                  <span class="text-lg">כבש (1 ק"ג)</span>
+                  <span class="mr-auto text-red-600 font-bold">₪65.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="meat" value="eggs" class="ml-3" />
+                  <span class="text-lg">ביצים (12 יחידות)</span>
+                  <span class="mr-auto text-red-600 font-bold">₪15.90</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Bread Section -->
+            <div id="bread" class="border-t pt-6">
+              <h3 class="text-xl font-bold mb-4 text-yellow-600">לחם</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="bread" value="white_bread" class="ml-3" />
+                  <span class="text-lg">לחם לבן (יחידה)</span>
+                  <span class="mr-auto text-yellow-600 font-bold">₪8.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="bread" value="whole_wheat" class="ml-3" />
+                  <span class="text-lg">לחם מלא (יחידה)</span>
+                  <span class="mr-auto text-yellow-600 font-bold">₪10.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="bread" value="pita" class="ml-3" />
+                  <span class="text-lg">פיתה (6 יחידות)</span>
+                  <span class="mr-auto text-yellow-600 font-bold">₪6.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="bread" value="croissant" class="ml-3" />
+                  <span class="text-lg">קרואסון (יחידה)</span>
+                  <span class="mr-auto text-yellow-600 font-bold">₪4.50</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="bread" value="bagel" class="ml-3" />
+                  <span class="text-lg">בייגל (יחידה)</span>
+                  <span class="mr-auto text-yellow-600 font-bold">₪3.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="bread" value="challah" class="ml-3" />
+                  <span class="text-lg">חלה (יחידה)</span>
+                  <span class="mr-auto text-yellow-600 font-bold">₪7.90</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Beverages Section -->
+            <div id="beverages" class="border-t pt-6">
+              <h3 class="text-xl font-bold mb-4 text-purple-600">משקאות</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="beverages" value="cola" class="ml-3" />
+                  <span class="text-lg">קולה (1.5 ליטר)</span>
+                  <span class="mr-auto text-purple-600 font-bold">₪8.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="beverages" value="water" class="ml-3" />
+                  <span class="text-lg">מים מינרליים (1.5 ליטר)</span>
+                  <span class="mr-auto text-purple-600 font-bold">₪3.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="beverages" value="juice" class="ml-3" />
+                  <span class="text-lg">מיץ תפוזים (1 ליטר)</span>
+                  <span class="mr-auto text-purple-600 font-bold">₪12.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="beverages" value="beer" class="ml-3" />
+                  <span class="text-lg">בירה (6 יחידות)</span>
+                  <span class="mr-auto text-purple-600 font-bold">₪24.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="beverages" value="wine" class="ml-3" />
+                  <span class="text-lg">יין אדום (750 מ"ל)</span>
+                  <span class="mr-auto text-purple-600 font-bold">₪45.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="beverages" value="coffee" class="ml-3" />
+                  <span class="text-lg">קפה שחור (200 גרם)</span>
+                  <span class="mr-auto text-purple-600 font-bold">₪18.90</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Snacks Section -->
+            <div id="snacks" class="border-t pt-6">
+              <h3 class="text-xl font-bold mb-4 text-orange-600">חטיפים</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="snacks" value="chips" class="ml-3" />
+                  <span class="text-lg">צ'יפס (100 גרם)</span>
+                  <span class="mr-auto text-orange-600 font-bold">₪6.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="snacks" value="popcorn" class="ml-3" />
+                  <span class="text-lg">פופקורן (100 גרם)</span>
+                  <span class="mr-auto text-orange-600 font-bold">₪4.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="snacks" value="nuts" class="ml-3" />
+                  <span class="text-lg">אגוזים (200 גרם)</span>
+                  <span class="mr-auto text-orange-600 font-bold">₪15.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="snacks" value="chocolate" class="ml-3" />
+                  <span class="text-lg">שוקולד (100 גרם)</span>
+                  <span class="mr-auto text-orange-600 font-bold">₪8.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="snacks" value="cookies" class="ml-3" />
+                  <span class="text-lg">עוגיות (200 גרם)</span>
+                  <span class="mr-auto text-orange-600 font-bold">₪12.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="snacks" value="crackers" class="ml-3" />
+                  <span class="text-lg">קרקרים (150 גרם)</span>
+                  <span class="mr-auto text-orange-600 font-bold">₪7.90</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Household Section -->
+            <div id="household" class="border-t pt-6">
+              <h3 class="text-xl font-bold mb-4 text-gray-600">מוצרי בית</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="household" value="detergent" class="ml-3" />
+                  <span class="text-lg">אבקת כביסה (2 ק"ג)</span>
+                  <span class="mr-auto text-gray-600 font-bold">₪18.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="household" value="toilet_paper" class="ml-3" />
+                  <span class="text-lg">נייר טואלט (12 גלילים)</span>
+                  <span class="mr-auto text-gray-600 font-bold">₪15.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="household" value="dish_soap" class="ml-3" />
+                  <span class="text-lg">נוזל כלים (500 מ"ל)</span>
+                  <span class="mr-auto text-gray-600 font-bold">₪8.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="household" value="trash_bags" class="ml-3" />
+                  <span class="text-lg">שקיות זבל (30 יחידות)</span>
+                  <span class="mr-auto text-gray-600 font-bold">₪12.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="household" value="cleaning_spray" class="ml-3" />
+                  <span class="text-lg">תרסיס ניקוי (500 מ"ל)</span>
+                  <span class="mr-auto text-gray-600 font-bold">₪9.90</span>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="household" value="paper_towels" class="ml-3" />
+                  <span class="text-lg">מגבות נייר (6 יחידות)</span>
+                  <span class="mr-auto text-gray-600 font-bold">₪11.90</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <label class="block font-semibold mb-2 text-lg">הערות מיוחדות</label>
+            <textarea class="w-full p-3 border rounded-xl resize-none" rows="3" placeholder="הערות מיוחדות..."></textarea>
+          </div>
+
+          <!-- Order Button -->
+          <div class="flex justify-center mt-8">
+            <button type="button" onclick="showPopup()"
+              class="bg-green-500 text-white px-12 py-4 rounded-2xl hover:bg-green-600 transition text-lg font-semibold">
+              בצע הזמנה
+            </button>
+          </div>
+        </form>
+
+        <div class="text-xs font-bold text-gray-800 text-center mt-4">
+          * לא בהכרח כולל זמני הכנה
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Popup -->
+  <div id="popup" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden z-50">
+    <div class="bg-white p-8 rounded-2xl shadow text-center relative max-w-md mx-4">
+      <button onclick="closePopup()"
+        class="absolute top-3 right-3 text-gray-400 hover:text-black text-2xl font-bold">&times;</button>
+      <p class="text-xl font-bold mb-4">
+        אופס!<br>
+        נראה שהלחיצה שלכם הקריסה את השירות.
+      </p>
+    </div>
+  </div>
+
+  <footer class="text-center text-sm text-gray-400 py-4 pb-2">
+    אתר זה הוא פרודיה בלבד
+  </footer>
+
+  <script>
+    function showPopup() {
+      document.getElementById('popup').classList.remove('hidden');
+    }
+
+    function closePopup() {
+      document.getElementById('popup').classList.add('hidden');
+    }
+
+    // Close popup if clicking outside
+    document.getElementById('popup').addEventListener('click', function (event) {
+      if (event.target === this) {
+        closePopup();
+      }
+    });
+  </script>
+
+</body>
+
+</html> 
