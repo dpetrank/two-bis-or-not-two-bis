@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>שם המסעדה - 2 Bis or Not 2 Bis</title>
-  <link href="styles.css" rel="stylesheet" />
+  <title>סופר קול - 2 Bis or Not 2 Bis</title>
+  <link href="../styles.css" rel="stylesheet" />
   <style>
     html,
     body {
@@ -24,14 +24,14 @@
   <header class="bg-yellow-500">
     <div class="max-w-6xl mx-auto px-4 md:px-32 flex justify-between items-center text-white py-4">
       <div class="flex items-center">
-        <a href="index.html" class="flex items-center">
-          <img src="images/logo.PNG" alt="Logo" class="h-10 w-auto ml-2" />
+        <a href="../index.html" class="flex items-center">
+          <img src="../images/logo.PNG" alt="Logo" class="h-10 w-auto ml-2" />
           <div class="text-2xl font-bold"><span dir="ltr">2 Bis or Not 2 Bis</span></div>
         </a>
       </div>
 
       <!-- Back Button -->
-      <a href="index.html" class="text-white hover:text-gray-200 font-semibold">
+      <a href="../index.html" class="text-white hover:text-gray-200 font-semibold">
         ← חזור לדף הבית
       </a>
     </div>
@@ -42,10 +42,10 @@
     
     <!-- Restaurant Header -->
     <div class="relative mb-6">
-      <img src="images/banner-super.PNG" alt="Restaurant Banner"
+      <img src="../images/banner-super.PNG" alt="Restaurant Banner"
         class="w-full h-48 md:h-64 object-cover rounded-2xl" />
       <div class="bg-white rounded-2xl p-1 shadow absolute -bottom-12 left-6 inline-block">
-        <img src="images/logo-super.PNG" alt="Restaurant Logo" class="h-24 w-24 object-contain rounded-xl">
+        <img src="../images/logo-super.PNG" alt="Restaurant Logo" class="h-24 w-24 object-contain rounded-xl">
       </div>
     </div>
 
@@ -59,7 +59,7 @@
 
         <!-- Delivery Time -->
         <div class="inline-flex items-center bg-gray-50 rounded-xl px-3 py-1 pl-4 mb-6 shadow max-w-fit">
-          <img src="images/scooter.png" alt="Delivery Icon" class="h-12 w-auto ml-3">
+          <img src="../images/scooter.png" alt="Delivery Icon" class="h-12 w-auto ml-3">
           <div class="text-right">
             <div class="text font-bold text-gray-800">זמן המשלוח* : 50 דק׳</div>
           </div>
@@ -426,6 +426,17 @@
             <textarea class="w-full p-3 border rounded-xl resize-none" rows="3" placeholder="הערות מיוחדות..."></textarea>
           </div>
 
+          <!-- Donation Checkbox -->
+           <div>
+            <label class="block font-semibold mb-2 text-lg">תרומה לנזקקים</label>
+          <div class="flex items-center p-4 bg-green-50 border border-green-200 rounded-xl">
+            <input type="checkbox" id="donation" name="donation" checked class="ml-3 h-5 w-5 text-green-600 rounded focus:ring-green-500 cursor-pointer">
+            <label for="donation" class="text-lg font-semibold text-green-800 cursor-pointer">
+              אני מעוניין לתרום את הרכישה שלי לאלה שצריכים אותה יותר ❤️
+            </label>
+          </div>
+        </div>
+
           <!-- Order Button -->
           <div class="flex justify-center mt-8">
             <button type="button" onclick="showPopup()"
@@ -454,11 +465,25 @@
     </div>
   </div>
 
+  <!-- Donation Popup -->
+  <div id="donation-popup" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden z-50">
+    <div class="bg-white p-8 rounded-2xl shadow text-center relative max-w-md mx-4">
+      <button onclick="closeDonationPopup()"
+        class="absolute top-3 right-3 text-gray-400 hover:text-black text-2xl font-bold">&times;</button>
+      <p class="text-xl font-bold mb-4">
+        יש ליצור קשר עם שירות הלקוחות שלנו על מנת לבטל את התרומה.<br>
+        הביטול יתועד בפוסט שיוצג בעמודי הפייסבוק, האינסטגרם והטוויטר הרשמיים שלנו.
+      </p>
+    </div>
+  </div>
+
   <footer class="text-center text-sm text-gray-400 py-4 pb-2">
     אתר זה הוא פרודיה בלבד
   </footer>
 
   <script>
+    let donationClickCount = 0;
+
     function showPopup() {
       document.getElementById('popup').classList.remove('hidden');
     }
@@ -467,12 +492,26 @@
       document.getElementById('popup').classList.add('hidden');
     }
 
-    // Close popup if clicking outside
-    document.getElementById('popup').addEventListener('click', function (event) {
-      if (event.target === this) {
-        closePopup();
+    // Prevent donation checkbox from being unchecked
+    document.getElementById('donation').addEventListener('change', function() {
+      if (!this.checked) {
+        donationClickCount++;
+        this.checked = true;
+        
+        if (donationClickCount >= 10) {
+          showDonationPopup();
+          donationClickCount = 0; // Reset counter
+        }
       }
     });
+
+    function showDonationPopup() {
+      document.getElementById('donation-popup').classList.remove('hidden');
+    }
+
+    function closeDonationPopup() {
+      document.getElementById('donation-popup').classList.add('hidden');
+    }
   </script>
 
 </body>
