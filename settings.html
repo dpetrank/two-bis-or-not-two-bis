@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>הגדרות - 2 Bis or Not 2 Bis</title>
+  <link href="styles.css" rel="stylesheet" />
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-sans">
+
+  <!-- Header -->
+  <header class="bg-yellow-500">
+    <div class="max-w-6xl mx-auto px-4 md:px-32 flex justify-between items-center text-white py-4">
+      <div class="flex items-center">
+        <a href="index.html" class="flex items-center">
+          <img src="images/logo.PNG" alt="Logo" class="h-10 w-auto ml-2" />
+          <div class="text-2xl font-bold"><span dir="ltr">2 Bis or Not 2 Bis</span></div>
+        </a>
+      </div>
+
+      <!-- Delivery Dropdown -->
+      <div class="relative text-black">
+        <button onclick="toggleDropdown()"
+          class="flex items-center space-x-3 space-x-reverse bg-white rounded-full px-3 py-1 hover:bg-gray-100 focus:outline-none"
+          id="dropdownToggle">
+          <img src="images/delivery-random.PNG" alt="Selected Delivery Man" id="selectedImage"
+            class="h-6 w-6 rounded-full" />
+          <span class="text-sm font-semibold text-gray-800" id="selectedName">אקראי</span>
+          <svg class="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        <div id="dropdownMenu" class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-lg z-10 hidden">
+          <ul id="dropdownOptions" class="py-1"></ul>
+        </div>
+      </div>
+
+      <!-- Settings Button -->
+      <a href="settings.html" class="flex items-center justify-center bg-white rounded-full p-2 hover:bg-gray-100 transition-colors duration-200 ml-2">
+        <svg class="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-4 md:px-32 pt-6 pb-16">
+    <!-- Back Button -->
+    <div class="mb-6">
+      <a href="index.html" class="inline-flex items-center text-gray-600 hover:text-gray-800 transition-colors duration-200">
+        <svg class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        חזרה לדף הבית
+      </a>
+    </div>
+
+    <!-- Settings Title -->
+    <h1 class="text-2xl font-bold mb-6 text-gray-900">הגדרות</h1>
+
+    <!-- Settings Section -->
+    <div class="bg-white rounded-2xl shadow p-6">
+      <h2 class="text-lg font-semibold mb-4 text-gray-800">העדפות קבלה</h2>
+      
+      <!-- Receipt Preference Toggle -->
+      <div class="flex items-center justify-between py-3 border-b border-gray-100">
+        <div class="flex-1">
+          <h3 class="text-base font-medium text-gray-900">שליחת קבלה</h3>
+          <p class="text-sm text-gray-600 mt-1">בחר כיצד לקבל את הקבלה שלך</p>
+        </div>
+        <div class="flex items-center space-x-3 space-x-reverse">
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" id="receiptToggle" class="sr-only peer" checked>
+            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-yellow-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:right-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-yellow-500"></div>
+          </label>
+          <span id="receiptStatus" class="text-sm font-medium text-gray-700">אימייל</span>
+        </div>
+      </div>
+
+      <!-- Receipt Options -->
+      <div id="receiptOptions" class="mt-4 space-y-3">
+        <div class="flex items-center p-3 rounded-lg border-2 border-yellow-500 bg-yellow-50">
+          <input type="radio" id="emailReceipt" name="receiptMethod" value="email" class="w-4 h-4 text-yellow-500 bg-gray-100 border-gray-300 focus:ring-yellow-500" checked>
+          <label for="emailReceipt" class="mr-3 text-sm font-medium text-gray-900 cursor-pointer">
+            <div class="flex items-center">
+              <svg class="h-4 w-4 text-gray-600 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              קבלה באימייל
+            </div>
+            <p class="text-xs text-gray-600 mt-1">קבל את הקבלה ישירות לתיבת הדואר האלקטרוני שלך</p>
+          </label>
+        </div>
+
+        <div class="flex items-center p-3 rounded-lg border-2 border-gray-200 bg-gray-50">
+          <input type="radio" id="mailReceipt" name="receiptMethod" value="mail" class="w-4 h-4 text-yellow-500 bg-gray-100 border-gray-300 focus:ring-yellow-500">
+          <label for="mailReceipt" class="mr-3 text-sm font-medium text-gray-900 cursor-pointer">
+            <div class="flex items-center">
+              <svg class="h-4 w-4 text-gray-600 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              קבלה בדואר
+            </div>
+            <p class="text-xs text-gray-600 mt-1">קבל את הקבלה בדואר הרגיל (עלות נוספת של 5₪)</p>
+          </label>
+        </div>
+      </div>
+
+      <!-- Save Button -->
+      <div class="mt-6 pt-4 border-t border-gray-100">
+        <button onclick="saveSettings()" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200">
+          שמור הגדרות
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center text-sm text-gray-400 py-4 pb-2">
+    אתר זה הוא פרודיה בלבד
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    const deliveryOptions = [
+      { name: "אקראי", img: "images/delivery-random.PNG", info: "שליח אקראי מהמאגר" },
+      { name: "אלעד", img: "images/delivery-elad.PNG", info: "חייכן, טועם מהצ׳יפס" },
+      { name: "ג׳וקר", img: "images/delivery-joker.PNG", info: "ג׳וקר" }
+    ];
+
+    let currentSelection = 0;
+
+    function toggleDropdown() {
+      document.getElementById('dropdownMenu').classList.toggle('hidden');
+    }
+
+    function selectDelivery(index) {
+      currentSelection = index;
+      const selected = deliveryOptions[index];
+      document.getElementById('selectedName').textContent = selected.name;
+      document.getElementById('selectedImage').src = selected.img;
+      renderDropdown();
+      toggleDropdown();
+    }
+
+    function renderDropdown() {
+      const container = document.getElementById('dropdownOptions');
+      container.innerHTML = "";
+      deliveryOptions.forEach((option, i) => {
+        const item = document.createElement('li');
+        item.className = `flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer ${i === currentSelection ? 'bg-gray-100 font-semibold' : ''}`;
+        item.onclick = () => selectDelivery(i);
+        item.innerHTML = `
+  <div class="flex items-start gap-3">
+    <img src="${option.img}" class="h-6 w-6 rounded-full mt-1" />
+    <div class="flex flex-col">
+      <span class="text-sm text-gray-800">${option.name}</span>
+      <span class="text-xs text-gray-500">${option.info}</span>
+    </div>
+  </div>
+`;
+        container.appendChild(item);
+      });
+    }
+
+    // Settings functionality
+    function updateReceiptOptions() {
+      const toggle = document.getElementById('receiptToggle');
+      const status = document.getElementById('receiptStatus');
+      const options = document.getElementById('receiptOptions');
+      
+      if (toggle.checked) {
+        status.textContent = 'אימייל';
+        options.style.display = 'block';
+      } else {
+        status.textContent = 'כבוי';
+        options.style.display = 'none';
+      }
+    }
+
+    function updateRadioStyles() {
+      const emailRadio = document.getElementById('emailReceipt');
+      const mailRadio = document.getElementById('mailReceipt');
+      const emailContainer = emailRadio.closest('div');
+      const mailContainer = mailRadio.closest('div');
+
+      if (emailRadio.checked) {
+        emailContainer.className = 'flex items-center p-3 rounded-lg border-2 border-yellow-500 bg-yellow-50';
+        mailContainer.className = 'flex items-center p-3 rounded-lg border-2 border-gray-200 bg-gray-50';
+      } else {
+        emailContainer.className = 'flex items-center p-3 rounded-lg border-2 border-gray-200 bg-gray-50';
+        mailContainer.className = 'flex items-center p-3 rounded-lg border-2 border-yellow-500 bg-yellow-50';
+      }
+    }
+
+    function saveSettings() {
+      const toggle = document.getElementById('receiptToggle');
+      const emailRadio = document.getElementById('emailReceipt');
+      const mailRadio = document.getElementById('mailReceipt');
+      
+      const settings = {
+        receiptEnabled: toggle.checked,
+        receiptMethod: emailRadio.checked ? 'email' : 'mail'
+      };
+      
+      localStorage.setItem('userSettings', JSON.stringify(settings));
+      
+      // Show success message
+      const button = event.target;
+      const originalText = button.textContent;
+      button.textContent = 'נשמר!';
+      button.classList.add('bg-green-500', 'hover:bg-green-600');
+      button.classList.remove('bg-yellow-500', 'hover:bg-yellow-600');
+      
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.classList.remove('bg-green-500', 'hover:bg-green-600');
+        button.classList.add('bg-yellow-500', 'hover:bg-yellow-600');
+      }, 2000);
+    }
+
+    function loadSettings() {
+      const savedSettings = localStorage.getItem('userSettings');
+      if (savedSettings) {
+        const settings = JSON.parse(savedSettings);
+        document.getElementById('receiptToggle').checked = settings.receiptEnabled;
+        if (settings.receiptMethod === 'mail') {
+          document.getElementById('mailReceipt').checked = true;
+        } else {
+          document.getElementById('emailReceipt').checked = true;
+        }
+        updateReceiptOptions();
+        updateRadioStyles();
+      }
+    }
+
+    // Event listeners
+    document.getElementById('receiptToggle').addEventListener('change', updateReceiptOptions);
+    document.getElementById('emailReceipt').addEventListener('change', updateRadioStyles);
+    document.getElementById('mailReceipt').addEventListener('change', updateRadioStyles);
+
+    document.addEventListener('click', function (event) {
+      const menu = document.getElementById('dropdownMenu');
+      const toggle = document.getElementById('dropdownToggle');
+      if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+        menu.classList.add('hidden');
+      }
+    });
+
+    // Initialize
+    renderDropdown();
+    loadSettings();
+  </script>
+
+</body>
+
+</html> 
