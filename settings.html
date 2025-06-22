@@ -124,6 +124,19 @@
         </div>
 
         <div class="flex items-center p-3 rounded-lg border-2 border-gray-200 bg-gray-50 cursor-pointer" onclick="selectDelivery(2)">
+            <input type="radio" id="deliveryAchav" name="deliveryMan" value="achav" class="w-4 h-4 text-yellow-500 bg-gray-100 border-gray-300 focus:ring-yellow-500">
+            <label for="deliveryAchav" class="mr-3 flex-1 cursor-pointer">
+              <div class="flex items-center">
+                <img src="images/delivery-achav.PNG" alt="Achav Delivery" class="h-8 w-8 rounded-full ml-3" />
+                <div>
+                  <span class="text-sm font-medium text-gray-900">אחאב</span>
+                  <p class="text-xs text-gray-600">ההזמנה תגיע בשק בד</p>
+                </div>
+              </div>
+            </label>
+          </div>
+
+        <div class="flex items-center p-3 rounded-lg border-2 border-gray-200 bg-gray-50 cursor-pointer" onclick="selectDelivery(3)">
           <input type="radio" id="deliveryJoker" name="deliveryMan" value="joker" class="w-4 h-4 text-yellow-500 bg-gray-100 border-gray-300 focus:ring-yellow-500">
           <label for="deliveryJoker" class="mr-3 flex-1 cursor-pointer">
             <div class="flex items-center">
@@ -145,12 +158,6 @@
 
   <!-- SCRIPTS -->
   <script>
-    const deliveryOptions = [
-      { name: "אקראי", img: "images/delivery-random.PNG", info: "שליח אקראי מהמאגר" },
-      { name: "אלעד", img: "images/delivery-elad.PNG", info: "חייכן, טועם מהצ׳יפס" },
-      { name: "ג׳וקר", img: "images/delivery-joker.PNG", info: "ג׳וקר" }
-    ];
-
     let currentDeliverySelection = 0;
     let currentReceiptSelection = 0;
 
@@ -181,16 +188,21 @@
     // Delivery man selection functionality
     function selectDelivery(index) {
       currentDeliverySelection = index;
-      const selected = deliveryOptions[index];
       
       // Update the display
       const selectedNameElement = document.getElementById('selectedName');
       const selectedImageElement = document.getElementById('selectedImage');
       const selectedInfoElement = document.getElementById('selectedInfo');
       
-      if (selectedNameElement) selectedNameElement.textContent = selected.name;
-      if (selectedImageElement) selectedImageElement.src = selected.img;
-      if (selectedInfoElement) selectedInfoElement.textContent = selected.info;
+      // Get the selected option's data from the HTML
+      const selectedContainer = document.querySelectorAll('[onclick^="selectDelivery"]')[index];
+      const selectedName = selectedContainer.querySelector('.text-sm.font-medium').textContent;
+      const selectedImg = selectedContainer.querySelector('img').src;
+      const selectedInfo = selectedContainer.querySelector('.text-xs.text-gray-600').textContent;
+      
+      if (selectedNameElement) selectedNameElement.textContent = selectedName;
+      if (selectedImageElement) selectedImageElement.src = selectedImg;
+      if (selectedInfoElement) selectedInfoElement.textContent = selectedInfo;
       
       // Update radio buttons
       document.querySelectorAll('input[name="deliveryMan"]').forEach((radio, i) => {
