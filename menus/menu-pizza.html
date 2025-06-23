@@ -57,8 +57,34 @@
 
     <!-- Fixed Pizza Graphic -->
     <div class="fixed left-1/4 top-2/3 transform -translate-y-1/2 z-10 hidden lg:block">
-      <div class="w-24 h-24 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
-        <div class="text-5xl">🍕</div>
+      <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-lg relative">
+        <!-- Pizza layers that appear based on selections -->
+        <div id="pizza-layers" class="absolute inset-0 w-full h-full">
+          <!-- Base layers (dough, tomato, cheese) - these rotate together -->
+          <div id="base-layers" class="absolute inset-0 w-full h-full transition-transform duration-500">
+            <img id="pizza-dough" src="../images/pizza-dough.PNG" alt="Pizza Dough" class="absolute inset-0 w-full h-full object-contain hidden">
+            <img id="pizza-tomato" src="../images/pizza-tomato.PNG" alt="Pizza Tomato" class="absolute inset-0 w-full h-full object-contain hidden">
+            <img id="pizza-cheese" src="../images/pizza-cheese.PNG" alt="Pizza Cheese" class="absolute inset-0 w-full h-full object-contain hidden">
+          </div>
+          
+          <!-- Individual topping layers - each can have its own rotation -->
+          <div id="topping-layers" class="absolute inset-0 w-full h-full">
+            <!-- Olives instances -->
+            <img id="pizza-olives-1" src="../images/pizza-olives.PNG" alt="Pizza Olives 1" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500">
+            <img id="pizza-olives-2" src="../images/pizza-olives.PNG" alt="Pizza Olives 2" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500">
+            <img id="pizza-olives-3" src="../images/pizza-olives.PNG" alt="Pizza Olives 3" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500">
+            
+            <!-- Onion instances -->
+            <img id="pizza-onion-1" src="../images/pizza-onion.PNG" alt="Pizza Onion 1" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500">
+            <img id="pizza-onion-2" src="../images/pizza-onion.PNG" alt="Pizza Onion 2" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500">
+            <img id="pizza-onion-3" src="../images/pizza-onion.PNG" alt="Pizza Onion 3" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500">
+            
+            <!-- Goat cheese instances -->
+            <img id="pizza-goat-1" src="../images/pizza-goat.PNG" alt="Pizza Goat Cheese 1" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500">
+            <img id="pizza-goat-2" src="../images/pizza-goat.PNG" alt="Pizza Goat Cheese 2" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500">
+            <img id="pizza-goat-3" src="../images/pizza-goat.PNG" alt="Pizza Goat Cheese 3" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500">
+          </div>
+        </div>
       </div>
     </div>
 
@@ -298,32 +324,149 @@
       document.getElementById('popup').classList.add('hidden');
     }
 
-    // Handle textarea input replacement
+    // Handle pizza visualization based on free toppings
     document.addEventListener('DOMContentLoaded', function() {
-      const textarea = document.getElementById('restaurantNotes');
-      let actualInput = '';
-      const targetMessage = 'להוסיף חריף בבקשה';
-      
-      textarea.addEventListener('input', function(e) {
-        // Store the actual input
-        actualInput = e.target.value;
+      const doughCheckbox = document.querySelector('input[type="checkbox"]');
+      const tomatoCheckbox = document.querySelectorAll('input[type="checkbox"]')[1];
+      const cheeseCheckbox = document.querySelectorAll('input[type="checkbox"]')[2];
+
+      const pizzaDough = document.getElementById('pizza-dough');
+      const pizzaTomato = document.getElementById('pizza-tomato');
+      const pizzaCheese = document.getElementById('pizza-cheese');
+      const baseLayers = document.getElementById('base-layers');
+
+      // Track which layers are currently visible
+      let visibleLayers = {
+        dough: false,
+        tomato: false,
+        cheese: false
+      };
+
+      // Track which topping instances are active
+      let toppingInstances = {
+        olives: [],
+        onion: [],
+        goat: []
+      };
+
+      function updatePizzaVisualization() {
+        console.log('Updating pizza visualization...');
         
-        // Show one character of the target message for each character typed
-        // But don't exceed the length of the target message
-        const charsToShow = Math.min(actualInput.length, targetMessage.length);
-        const replacementText = targetMessage.substring(0, charsToShow);
+        // Check all checkboxes for specific toppings
+        const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
         
-        // Temporarily remove the event listener to avoid infinite loop
-        textarea.removeEventListener('input', arguments.callee);
+        // Free toppings
+        const doughChecked = doughCheckbox.checked;
+        const tomatoChecked = tomatoCheckbox.checked;
+        const cheeseChecked = cheeseCheckbox.checked;
         
-        // Set the replacement text
-        textarea.value = replacementText;
+        // Reset topping instances
+        toppingInstances = {
+          olives: [],
+          onion: [],
+          goat: []
+        };
         
-        // Restore the event listener
-        textarea.addEventListener('input', arguments.callee);
+        // Process each checkbox and track toppings
+        allCheckboxes.forEach((checkbox, index) => {
+          const label = checkbox.closest('label');
+          if (label) {
+            const text = label.textContent.trim();
+            
+            if (text.includes('זיתים שחורים') && checkbox.checked) {
+              toppingInstances.olives.push(0); // No rotation
+            }
+            
+            if (text.includes('בצל סגול') && checkbox.checked) {
+              toppingInstances.onion.push(0); // No rotation
+            }
+            
+            if (text.includes('גבינת עזים') && checkbox.checked) {
+              toppingInstances.goat.push(0); // No rotation
+            }
+          }
+        });
         
-        // Set cursor position to end
-        textarea.setSelectionRange(replacementText.length, replacementText.length);
+        console.log('Dough checked:', doughChecked);
+        console.log('Tomato checked:', tomatoChecked);
+        console.log('Cheese checked:', cheeseChecked);
+        console.log('Topping instances:', toppingInstances);
+        
+        // Update visible layers
+        visibleLayers.dough = doughChecked;
+        visibleLayers.tomato = tomatoChecked;
+        visibleLayers.cheese = cheeseChecked;
+        
+        // Show/hide base layers
+        if (doughChecked) {
+          pizzaDough.classList.remove('hidden');
+          console.log('Showing dough');
+        } else {
+          pizzaDough.classList.add('hidden');
+          console.log('Hiding dough');
+        }
+
+        if (tomatoChecked) {
+          pizzaTomato.classList.remove('hidden');
+          console.log('Showing tomato');
+        } else {
+          pizzaTomato.classList.add('hidden');
+          console.log('Hiding tomato');
+        }
+
+        if (cheeseChecked) {
+          pizzaCheese.classList.remove('hidden');
+          console.log('Showing cheese');
+        } else {
+          pizzaCheese.classList.add('hidden');
+          console.log('Hiding cheese');
+        }
+
+        // Apply individual topping visibility
+        applyToppingVisibility();
+      }
+
+      function applyToppingVisibility() {
+        // Apply olives visibility
+        for (let i = 0; i < 3; i++) {
+          const oliveImg = document.getElementById(`pizza-olives-${i + 1}`);
+          if (i < toppingInstances.olives.length) {
+            oliveImg.classList.remove('hidden');
+            oliveImg.style.transform = 'rotate(0deg)'; // No rotation
+            console.log(`Showing olives ${i + 1}`);
+          } else {
+            oliveImg.classList.add('hidden');
+          }
+        }
+        
+        // Apply onion visibility
+        for (let i = 0; i < 3; i++) {
+          const onionImg = document.getElementById(`pizza-onion-${i + 1}`);
+          if (i < toppingInstances.onion.length) {
+            onionImg.classList.remove('hidden');
+            onionImg.style.transform = 'rotate(0deg)'; // No rotation
+            console.log(`Showing onion ${i + 1}`);
+          } else {
+            onionImg.classList.add('hidden');
+          }
+        }
+        
+        // Apply goat cheese visibility
+        for (let i = 0; i < 3; i++) {
+          const goatImg = document.getElementById(`pizza-goat-${i + 1}`);
+          if (i < toppingInstances.goat.length) {
+            goatImg.classList.remove('hidden');
+            goatImg.style.transform = 'rotate(0deg)'; // No rotation
+            console.log(`Showing goat cheese ${i + 1}`);
+          } else {
+            goatImg.classList.add('hidden');
+          }
+        }
+      }
+
+      // Add event listeners to all checkboxes
+      document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener('change', updatePizzaVisualization);
       });
     });
 
