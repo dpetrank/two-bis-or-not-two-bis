@@ -55,13 +55,20 @@
       </div>
     </div>
 
+    <!-- Fixed Pizza Graphic -->
+    <div class="fixed left-1/4 top-2/3 transform -translate-y-1/2 z-10 hidden lg:block">
+      <div class="w-24 h-24 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
+        <div class="text-5xl">🍕</div>
+      </div>
+    </div>
+
     <!-- White Container starting from banner level -->
     <div class="bg-white rounded-2xl shadow-lg p-6 -mt-12">
       <!-- Restaurant Info -->
       <div class="pt-16 pb-6">
         <h1 class="text-2xl font-bold mb-2">פיצה זיו</h1>
-        <h2 class="text-gray-600 font-bold mb-2">פיצה איטלקית אותנטית בתוצרת מקומית</h2>
-        <h2 class="text-gray-600 mb-6">רוטשילד 123</h2>
+        <h2 class="text-gray-600 font-bold mb-2">פיצה בהרכבה</h2>
+        <h2 class="text-gray-600 mb-6">רוטשילד 124</h2>
 
         <!-- Delivery Time -->
         <div class="inline-flex items-center bg-gray-50 rounded-xl px-3 py-1 pl-4 mb-6 shadow max-w-fit">
@@ -71,154 +78,183 @@
           </div>
         </div>
 
-        <!-- Spicy Guide -->
-        <div class="bg-orange-50 border border-orange-200 rounded-xl p-4 mb-6">
-          <h3 class="font-bold text-lg mb-3 text-orange-800">מקרא לתפריט 📋</h3>
-          <div class="space-y-2 text-sm">
-            <div class="flex items-center">
-              <span class="ml-2">🌱</span>
-              <span>ללא מוצרים מן החי</span>
-            </div>
-            <div class="flex items-center">
-              <span class="ml-2">🌾</span>
-              <span>מתאים לצליאקים ונמנעים מגלוטן</span>
-            </div>
-            <div class="flex items-center">
-              <span class="ml-2">🥛</span>
-              <span>מתאים לבעלי רגישות ללקטוז</span>
-            </div>
-            <div class="flex items-center">
-              <span class="ml-2">🥜</span>
-              <span>מתאים לבעלי אלרגיה לאגוזים</span>
-            </div>
-            <div class="flex items-center">
-              <span class="ml-2">😊</span>
-              <span>טעם עדין</span>
-            </div>
-            <div class="flex items-center">
-              <span class="ml-2">🌶️</span>
-              <span>חריפות עדינה</span>
-            </div>
-            <div class="flex items-center">
-              <span class="ml-2">🌶️🌶️</span>
-              <span>חריפות בינונית</span>
-            </div>
-            <div class="flex items-center">
-              <span class="ml-2">🌶️🌶️🌶️</span>
-              <span>חריף - לאוהבי חריף</span>
-            </div>
-            <div class="flex items-center">
-              <span class="ml-2">🌶️🌶️🌶️🌶️</span>
-              <span>חריף מאוד - למומחים בלבד!</span>
-            </div>
-          </div>
-        </div>
-
         <!-- Menu Form -->
         <form class="space-y-6">
           <div>
-            <label class="block font-semibold mb-3 text-lg">פיצות קלאסיות</label>
+            <label class="block font-semibold mb-3 text-lg">תוספות בחינם</label>
             <div class="space-y-3">
               <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
                 <input type="checkbox" name="pizzaDish" class="ml-3" />
                 <div class="flex-1">
-                  <span class="text-lg font-semibold">פיצה מרגריטה</span>
-                  <div class="text-sm text-gray-600">רוטב עגבניות, מוצרלה, בזיליקום <br> 😊</div>
-                </div>
-              </label>
-              <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                <input type="checkbox" name="pizzaDish" class="ml-3" />
-                <div class="flex-1">
-                  <span class="text-lg font-semibold">פיצה פפרוני</span>
-                  <div class="text-sm text-gray-600">רוטב עגבניות, מוצרלה, פפרוני <br> 🌶️🌶️</div>
+                  <span class="text-md">בצק</span>
                 </div>
               </label>
               <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
                 <input type="checkbox" name="pizzaDish" class="ml-3" />
                 <div class="flex-1">
-                  <span class="text-lg font-semibold">פיצה ארבע גבינות</span>
-                  <div class="text-sm text-gray-600">מוצרלה, פרמזן, גורגונזולה, ריקוטה <br> 😊</div>
+                  <span class="text-md">רוטב עגבניות</span>
                 </div>
               </label>
               <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
                 <input type="checkbox" name="pizzaDish" class="ml-3" />
                 <div class="flex-1">
-                  <span class="text-lg font-semibold">פיצה ירקות</span>
-                  <div class="text-sm text-gray-600">פטריות, פלפל, בצל, זיתים <br> 🌱</div>
+                  <span class="text-md">מוצרלה</span>
                 </div>
               </label>
             </div>
           </div>
 
-          <div>
-            <label class="block font-semibold mb-3 text-lg">פיצות מיוחדות</label>
-            <div class="space-y-3">
-              <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                <input type="checkbox" name="specialPizza" class="ml-3" />
-                <div class="flex-1">
-                  <span class="text-lg font-semibold">פיצה זיו</span>
-                  <div class="text-sm text-gray-600">רוטב עגבניות, מוצרלה, פפרוני, פטריות, בצל <br> 🌶️🌶️🌶️</div>
-                </div>
-              </label>
-              <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                <input type="checkbox" name="specialPizza" class="ml-3" />
-                <div class="flex-1">
-                  <span class="text-lg font-semibold">פיצה חריפה</span>
-                  <div class="text-sm text-gray-600">רוטב עגבניות, מוצרלה, צ'ילי, פפרוני חריף <br> 🌶️🌶️🌶️🌶️</div>
-                </div>
-              </label>
-              <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                <input type="checkbox" name="specialPizza" class="ml-3" />
-                <div class="flex-1">
-                  <span class="text-lg font-semibold">פיצה ים תיכונית</span>
-                  <div class="text-sm text-gray-600">רוטב עגבניות, מוצרלה, זיתים, ארטישוק, עגבניות מיובשות <br> 😊</div>
-                </div>
-              </label>
+          <!-- Paid Toppings Toggle Buttons -->
+          <div class="space-y-2">
+            <div class="flex justify-start" id="button1">
+              <button type="button" onclick="togglePaidToppings('paidToppingsSection1')" 
+                class="text-blue-600 hover:text-blue-800 transition text-lg font-semibold">
+                + תוספות בתשלום: חצי ימני
+              </button>
             </div>
           </div>
 
-          <div>
-            <label class="block font-semibold mb-3 text-lg">לילדים</label>
-            <div class="space-y-3">
-              <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                <input type="checkbox" name="kidsDish" class="ml-3" />
-                <div class="flex-1">
-                  <span class="text-lg font-semibold">פיצה ילדים</span>
-                  <div class="text-sm text-gray-600">פיצה קטנה עם רוטב עגבניות ומוצרלה <br> 😊</div>
-                </div>
-              </label>
+          <!-- Paid Toppings Section 1 (Hidden by default) -->
+          <div id="paidToppingsSection1" class="hidden">
+            <div>
+              <div class="space-y-3">
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <div class="flex-1">
+                    <span class="text-md">זיתים שחורים</span>
+                  </div>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <div class="flex-1">
+                    <span class="text-md">בצל סגול</span>
+                  </div>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <div class="flex-1">
+                    <span class="text-md">גבינת עזים</span>
+                  </div>
+                </label>
+              </div>
+              <!-- Next button appears at bottom of this section -->
+              <div class="flex justify-start mt-4" id="button2">
+                <button type="button" onclick="togglePaidToppings('paidToppingsSection2')" 
+                  class="text-blue-600 hover:text-blue-800 transition text-lg font-semibold">
+                  + תוספות בתשלום: חצי ימני
+                </button>
+              </div>
             </div>
           </div>
 
-          <div>
-            <label class="block font-semibold mb-3 text-lg">תוספות</label>
-            <div class="space-y-3">
-              <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                <input type="checkbox" class="ml-3" />
-                <span class="text-lg">תוספת גבינת מוצרלה</span>
-              </label>
-              <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                <input type="checkbox" class="ml-3" />
-                <span class="text-lg">תוספת פפרוני</span>
-              </label>
-              <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                <input type="checkbox" class="ml-3" />
-                <span class="text-lg">תוספת פטריות</span>
-              </label>
-              <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                <input type="checkbox" class="ml-3" />
-                <span class="text-lg">תוספת זיתים</span>
-              </label>
-              <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                <input type="checkbox" class="ml-3" />
-                <span class="text-lg">תוספת צ'ילי חריף</span>
-              </label>
+          <!-- Paid Toppings Section 2 (Hidden by default) -->
+          <div id="paidToppingsSection2" class="hidden">
+            <div>
+              <div class="space-y-3">
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <div class="flex-1">
+                    <span class="text-md">לסובב את הפיצה ב-90 מעלות</span>
+                  </div>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <div class="flex-1">
+                    <span class="text-md">זיתים שחורים</span>
+                  </div>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <div class="flex-1">
+                    <span class="text-md">בצל סגול</span>
+                  </div>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <div class="flex-1">
+                    <span class="text-md">גבינת עזים</span>
+                  </div>
+                </label>
+              </div>
+              <!-- Next button appears at bottom of this section -->
+              <div class="flex justify-start mt-4" id="button3">
+                <button type="button" onclick="togglePaidToppings('paidToppingsSection3')" 
+                  class="text-blue-600 hover:text-blue-800 transition text-lg font-semibold">
+                  + תוספות בתשלום: חצי ימני
+                </button>
+              </div>
             </div>
           </div>
 
-          <div>
-            <label class="block font-semibold mb-2 text-lg">הערות למסעדה</label>
-            <textarea id="restaurantNotes" class="w-full p-3 border rounded-xl resize-none" rows="3" placeholder="הערות מיוחדות..."></textarea>
+          <!-- Paid Toppings Section 3 (Hidden by default) -->
+          <div id="paidToppingsSection3" class="hidden">
+            <div>
+              <div class="space-y-3">
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <div class="flex-1">
+                    <span class="text-md">לסובב את הפיצה ב-90 מעלות</span>
+                  </div>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <div class="flex-1">
+                    <span class="text-md">זיתים שחורים</span>
+                  </div>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <div class="flex-1">
+                    <span class="text-md">בצל סגול</span>
+                  </div>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <div class="flex-1">
+                    <span class="text-md">גבינת עזים</span>
+                  </div>
+                </label>
+              </div>
+              <!-- Next button appears at bottom of this section -->
+              <div class="flex justify-start mt-4" id="button4">
+                <button type="button" onclick="togglePaidToppings('paidToppingsSection4')" 
+                  class="text-blue-600 hover:text-blue-800 transition text-lg font-semibold">
+                  + תוספות בתשלום: חצי ימני
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paid Toppings Section 4 (Hidden by default) -->
+          <div id="paidToppingsSection4" class="hidden">
+            <div>
+              <div class="space-y-3">
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <div class="flex-1">
+                    <span class="text-md">לסובב את הפיצה ב-90 מעלות</span>
+                  </div>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <div class="flex-1">
+                    <span class="text-md">זיתים שחורים</span>
+                  </div>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <div class="flex-1">
+                    <span class="text-md">בצל סגול</span>
+                  </div>
+                </label>
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <div class="flex-1">
+                    <span class="text-md">גבינת עזים</span>
+                  </div>
+                </label>
+              </div>
+            </div>
           </div>
 
           <!-- Order Button -->
@@ -290,6 +326,20 @@
         textarea.setSelectionRange(replacementText.length, replacementText.length);
       });
     });
+
+    function togglePaidToppings(sectionId) {
+      const paidToppingsSection = document.getElementById(sectionId);
+      const toggleButton = event.target;
+      
+      // Show the paid toppings section
+      paidToppingsSection.classList.remove('hidden');
+      
+      // Change button text and disable it
+      toggleButton.textContent = toggleButton.textContent.replace('+ ', '');
+      toggleButton.classList.remove('text-blue-600', 'hover:text-blue-800');
+      toggleButton.classList.add('text-gray-500', 'cursor-not-allowed');
+      toggleButton.disabled = true;
+    }
   </script>
 
 </body>
