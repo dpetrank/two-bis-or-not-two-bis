@@ -60,12 +60,10 @@
       <div class="w-40 h-40 bg-white rounded-full flex items-center justify-center shadow-lg relative">
         <!-- Pizza layers that appear based on selections -->
         <div id="pizza-layers" class="absolute inset-0 w-full h-full">
-          <!-- Base layers (dough, tomato, cheese) - these rotate together -->
-          <div id="base-layers" class="absolute inset-0 w-full h-full transition-transform duration-500">
-            <img id="pizza-dough" src="../images/pizza-dough.PNG" alt="Pizza Dough" class="absolute inset-0 w-full h-full object-contain hidden" data-letter="a" data-number="1">
-            <img id="pizza-tomato" src="../images/pizza-tomato.PNG" alt="Pizza Tomato" class="absolute inset-0 w-full h-full object-contain hidden" data-letter="a" data-number="1">
-            <img id="pizza-cheese" src="../images/pizza-cheese.PNG" alt="Pizza Cheese" class="absolute inset-0 w-full h-full object-contain hidden" data-letter="a" data-number="1">
-          </div>
+          <!-- Base layers (dough, tomato, cheese) - now at same level as toppings -->
+          <img id="pizza-dough" src="../images/pizza-dough.PNG" alt="Pizza Dough" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500" data-letter="a" data-number="1">
+          <img id="pizza-tomato" src="../images/pizza-tomato.PNG" alt="Pizza Tomato" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500" data-letter="a" data-number="1">
+          <img id="pizza-cheese" src="../images/pizza-cheese.PNG" alt="Pizza Cheese" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500" data-letter="a" data-number="1">
           
           <!-- Individual topping layers - each can have its own rotation -->
           <div id="topping-layers" class="absolute inset-0 w-full h-full">
@@ -343,7 +341,6 @@
       const pizzaDough = document.getElementById('pizza-dough');
       const pizzaTomato = document.getElementById('pizza-tomato');
       const pizzaCheese = document.getElementById('pizza-cheese');
-      const baseLayers = document.getElementById('base-layers');
 
       // Track which layers are currently visible
       let visibleLayers = {
@@ -479,7 +476,6 @@
           const oliveImg = document.getElementById(`pizza-olives-${i}`);
           if (toppingInstances.olives.includes(i)) {
             oliveImg.classList.remove('hidden');
-            oliveImg.style.transform = 'rotate(0deg)'; // No rotation
             console.log(`Showing olives ${i}`);
           } else {
             oliveImg.classList.add('hidden');
@@ -491,7 +487,6 @@
           const onionImg = document.getElementById(`pizza-onion-${i}`);
           if (toppingInstances.onion.includes(i)) {
             onionImg.classList.remove('hidden');
-            onionImg.style.transform = 'rotate(0deg)'; // No rotation
             console.log(`Showing onion ${i}`);
           } else {
             onionImg.classList.add('hidden');
@@ -503,7 +498,6 @@
           const goatImg = document.getElementById(`pizza-goat-${i}`);
           if (toppingInstances.goat.includes(i)) {
             goatImg.classList.remove('hidden');
-            goatImg.style.transform = 'rotate(0deg)'; // No rotation
             console.log(`Showing goat cheese ${i}`);
           } else {
             goatImg.classList.add('hidden');
