@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>הגדרות מנהל - 2 Bis or Not 2 Bis</title>
+  <link href="../styles.css" rel="stylesheet" />
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-sans">
+
+  <!-- Header -->
+  <header class="bg-red-600">
+    <div class="max-w-6xl mx-auto px-4 md:px-32 flex justify-between items-center text-white py-4">
+      <div class="flex items-center">
+        <a href="../index.html" class="flex items-center">
+          <img src="../images/logo.PNG" alt="Logo" class="h-10 w-auto ml-2" />
+          <div class="text-2xl font-bold"><span dir="ltr">2 Bis or Not 2 Bis</span></div>
+        </a>
+        <span class="mr-4 text-sm bg-red-700 px-2 py-1 rounded">מנהל</span>
+      </div>
+
+      <!-- Back Button -->
+      <a href="../index.html" class="text-white hover:text-gray-200 font-semibold">
+        ← חזור לדף הבית
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-4 md:px-32 pt-6 pb-16">
+    <!-- Admin Settings Title -->
+    <h1 class="text-2xl font-bold mb-6 text-gray-900">הגדרות מנהל</h1>
+
+    <!-- Restaurant Management Section -->
+    <div class="bg-white rounded-2xl shadow p-6">
+      <h2 class="text-lg font-semibold mb-4 text-gray-800">ניהול מסעדות</h2>
+      
+      <!-- Restaurant Status -->
+      <div class="space-y-3">
+        <div class="flex items-center justify-between p-3 rounded-lg border-2 border-gray-200 bg-gray-50">
+          <div class="flex items-center">
+            <img src="../images/banner/sushi.PNG" alt="Sushi Restaurant" class="h-8 w-8 rounded-full ml-3" />
+            <div>
+              <span class="text-sm font-medium text-gray-900">הסושי של מוישלה</span>
+              <p class="text-xs text-gray-600">סושי, תפזורת</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <span class="inline-block bg-green-200 text-green-800 px-2 py-1 text-xs rounded mr-2">פעיל</span>
+            <button class="text-red-600 hover:text-red-800 text-sm font-medium" onclick="toggleRestaurantStatus('sushi')">השבת</button>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between p-3 rounded-lg border-2 border-gray-200 bg-gray-50">
+          <div class="flex items-center">
+            <img src="../images/banner/super.PNG" alt="Super Restaurant" class="h-8 w-8 rounded-full ml-3" />
+            <div>
+              <span class="text-sm font-medium text-gray-900">סופר קול</span>
+              <p class="text-xs text-gray-600">מכולת</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <span class="inline-block bg-green-200 text-green-800 px-2 py-1 text-xs rounded mr-2">פעיל</span>
+            <button class="text-red-600 hover:text-red-800 text-sm font-medium" onclick="toggleRestaurantStatus('super')">השבת</button>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between p-3 rounded-lg border-2 border-gray-200 bg-gray-50">
+          <div class="flex items-center">
+            <img src="../images/banner/pasta.PNG" alt="Pasta Restaurant" class="h-8 w-8 rounded-full ml-3" />
+            <div>
+              <span class="text-sm font-medium text-gray-900">פסטה בכפר</span>
+              <p class="text-xs text-gray-600">פסטה, איטלקי</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <span class="inline-block bg-green-200 text-green-800 px-2 py-1 text-xs rounded mr-2">פעיל</span>
+            <button class="text-red-600 hover:text-red-800 text-sm font-medium" onclick="toggleRestaurantStatus('pasta')">השבת</button>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between p-3 rounded-lg border-2 border-gray-200 bg-gray-50">
+          <div class="flex items-center">
+            <div class="h-8 w-8 rounded-full ml-3 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
+              <span class="text-white text-sm">🧮</span>
+            </div>
+            <div>
+              <span class="text-sm font-medium text-gray-900">המחשבון</span>
+              <p class="text-xs text-gray-600">מחשבון, חישובים</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <span class="inline-block bg-green-200 text-green-800 px-2 py-1 text-xs rounded mr-2">פעיל</span>
+            <button class="text-red-600 hover:text-red-800 text-sm font-medium" onclick="toggleRestaurantStatus('calculator')">השבת</button>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between p-3 rounded-lg border-2 border-gray-200 bg-gray-50">
+          <div class="flex items-center">
+            <div class="h-8 w-8 rounded-full ml-3 bg-gradient-to-r from-red-500 to-orange-500 flex items-center justify-center">
+              <span class="text-white text-sm">🍕</span>
+            </div>
+            <div>
+              <span class="text-sm font-medium text-gray-900">פיצה זיו</span>
+              <p class="text-xs text-gray-600">פיצה, איטלקי</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <span class="inline-block bg-green-200 text-green-800 px-2 py-1 text-xs rounded mr-2">פעיל</span>
+            <button class="text-red-600 hover:text-red-800 text-sm font-medium" onclick="toggleRestaurantStatus('pizza')">השבת</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add New Restaurant Button -->
+      <button class="mt-4 w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200" onclick="addNewRestaurant()">
+        + הוסף מסעדה חדשה
+      </button>
+    </div>
+
+    <!-- System Settings Section -->
+    <div class="bg-white rounded-2xl shadow p-6 mt-6">
+      <h2 class="text-lg font-semibold mb-4 text-gray-800">הגדרות מערכת</h2>
+      
+      <!-- System Options -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between p-3 rounded-lg border-2 border-gray-200 bg-gray-50">
+          <div>
+            <span class="text-sm font-medium text-gray-900">מצב תחזוקה</span>
+            <p class="text-xs text-gray-600">השבת את האתר לתחזוקה</p>
+          </div>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" id="maintenanceMode" class="sr-only peer" onchange="toggleMaintenanceMode()">
+            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:right-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+          </label>
+        </div>
+
+        <div class="flex items-center justify-between p-3 rounded-lg border-2 border-gray-200 bg-gray-50">
+          <div>
+            <span class="text-sm font-medium text-gray-900">הנחה כללית</span>
+            <p class="text-xs text-gray-600">הפעל הנחה של 15% על כל ההזמנות</p>
+          </div>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" id="globalDiscount" class="sr-only peer" checked onchange="toggleGlobalDiscount()">
+            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:right-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+          </label>
+        </div>
+
+        <div class="flex items-center justify-between p-3 rounded-lg border-2 border-gray-200 bg-gray-50">
+          <div>
+            <span class="text-sm font-medium text-gray-900">התראות דחיפה</span>
+            <p class="text-xs text-gray-600">אפשר שליחת התראות למשתמשים</p>
+          </div>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" id="pushNotifications" class="sr-only peer" onchange="togglePushNotifications()">
+            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:right-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Admin Logs Section -->
+    <div class="bg-white rounded-2xl shadow p-6 mt-6">
+      <div class="flex items-center justify-between cursor-pointer" onclick="toggleLogs()">
+        <h2 class="text-lg font-semibold text-gray-800">יומן פעילות</h2>
+        <svg id="logsArrow" class="h-5 w-5 text-gray-600 transform transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+      
+      <!-- Logs Content -->
+      <div id="logsContent" class="hidden mt-4">
+        <div class="space-y-2 max-h-64 overflow-y-auto">
+          <div class="p-3 bg-gray-50 rounded-lg">
+            <div class="text-sm text-gray-600">2024-01-15 14:30:22</div>
+            <div class="text-sm font-medium">מסעדה "פסטה בכפר" נוספה למערכת</div>
+          </div>
+          <div class="p-3 bg-gray-50 rounded-lg">
+            <div class="text-sm text-gray-600">2024-01-15 13:45:10</div>
+            <div class="text-sm font-medium">הנחה כללית של 15% הופעלה</div>
+          </div>
+          <div class="p-3 bg-gray-50 rounded-lg">
+            <div class="text-sm text-gray-600">2024-01-15 12:20:05</div>
+            <div class="text-sm font-medium">משתמש חדש נרשם: user_1234</div>
+          </div>
+          <div class="p-3 bg-gray-50 rounded-lg">
+            <div class="text-sm text-gray-600">2024-01-15 11:15:33</div>
+            <div class="text-sm font-medium">הזמנה בוצעה: #ORD-2024-001</div>
+          </div>
+          <div class="p-3 bg-gray-50 rounded-lg">
+            <div class="text-sm text-gray-600">2024-01-15 10:30:18</div>
+            <div class="text-sm font-medium">גיבוי מערכת הושלם בהצלחה</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center text-sm text-gray-400 py-4 pb-2">
+    אתר זה הוא פרודיה בלבד
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Restaurant management functionality
+    function toggleRestaurantStatus(restaurant) {
+      const button = event.target;
+      const statusSpan = button.previousElementSibling;
+      
+      if (statusSpan.textContent === 'פעיל') {
+        statusSpan.textContent = 'מושבת';
+        statusSpan.className = 'inline-block bg-red-200 text-red-800 px-2 py-1 text-xs rounded mr-2';
+        button.textContent = 'הפעל';
+        button.className = 'text-green-600 hover:text-green-800 text-sm font-medium';
+      } else {
+        statusSpan.textContent = 'פעיל';
+        statusSpan.className = 'inline-block bg-green-200 text-green-800 px-2 py-1 text-xs rounded mr-2';
+        button.textContent = 'השבת';
+        button.className = 'text-red-600 hover:text-red-800 text-sm font-medium';
+      }
+      
+      addLog(`מסעדה "${restaurant}" ${statusSpan.textContent === 'פעיל' ? 'הופעלה' : 'הושבתה'}`);
+    }
+
+    function addNewRestaurant() {
+      alert('פונקציונליות להוספת מסעדה חדשה תתווסף בקרוב!');
+      addLog('ניסיון להוסיף מסעדה חדשה');
+    }
+
+    // System settings functionality
+    function toggleMaintenanceMode() {
+      const isEnabled = document.getElementById('maintenanceMode').checked;
+      addLog(`מצב תחזוקה ${isEnabled ? 'הופעל' : 'הושבת'}`);
+    }
+
+    function toggleGlobalDiscount() {
+      const isEnabled = document.getElementById('globalDiscount').checked;
+      addLog(`הנחה כללית ${isEnabled ? 'הופעלה' : 'הושבתה'}`);
+    }
+
+    function togglePushNotifications() {
+      const isEnabled = document.getElementById('pushNotifications').checked;
+      addLog(`התראות דחיפה ${isEnabled ? 'הופעלו' : 'הושבתו'}`);
+    }
+
+    // Logs functionality
+    function toggleLogs() {
+      const logsContent = document.getElementById('logsContent');
+      const arrow = document.getElementById('logsArrow');
+      
+      if (logsContent.classList.contains('hidden')) {
+        logsContent.classList.remove('hidden');
+        arrow.classList.add('transform', 'rotate-180');
+      } else {
+        logsContent.classList.add('hidden');
+        arrow.classList.remove('transform', 'rotate-180');
+      }
+    }
+
+    function addLog(message) {
+      const logsContent = document.getElementById('logsContent');
+      const logsContainer = logsContent.querySelector('.space-y-2');
+      
+      const now = new Date();
+      const timestamp = now.toISOString().replace('T', ' ').substring(0, 19);
+      
+      const logEntry = document.createElement('div');
+      logEntry.className = 'p-3 bg-gray-50 rounded-lg';
+      logEntry.innerHTML = `
+        <div class="text-sm text-gray-600">${timestamp}</div>
+        <div class="text-sm font-medium">${message}</div>
+      `;
+      
+      logsContainer.insertBefore(logEntry, logsContainer.firstChild);
+    }
+  </script>
+
+</body>
+
+</html> 
