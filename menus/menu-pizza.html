@@ -62,27 +62,30 @@
         <div id="pizza-layers" class="absolute inset-0 w-full h-full">
           <!-- Base layers (dough, tomato, cheese) - these rotate together -->
           <div id="base-layers" class="absolute inset-0 w-full h-full transition-transform duration-500">
-            <img id="pizza-dough" src="../images/pizza-dough.PNG" alt="Pizza Dough" class="absolute inset-0 w-full h-full object-contain hidden">
-            <img id="pizza-tomato" src="../images/pizza-tomato.PNG" alt="Pizza Tomato" class="absolute inset-0 w-full h-full object-contain hidden">
-            <img id="pizza-cheese" src="../images/pizza-cheese.PNG" alt="Pizza Cheese" class="absolute inset-0 w-full h-full object-contain hidden">
+            <img id="pizza-dough" src="../images/pizza-dough.PNG" alt="Pizza Dough" class="absolute inset-0 w-full h-full object-contain hidden" data-letter="a" data-number="1">
+            <img id="pizza-tomato" src="../images/pizza-tomato.PNG" alt="Pizza Tomato" class="absolute inset-0 w-full h-full object-contain hidden" data-letter="a" data-number="1">
+            <img id="pizza-cheese" src="../images/pizza-cheese.PNG" alt="Pizza Cheese" class="absolute inset-0 w-full h-full object-contain hidden" data-letter="a" data-number="1">
           </div>
           
           <!-- Individual topping layers - each can have its own rotation -->
           <div id="topping-layers" class="absolute inset-0 w-full h-full">
             <!-- Olives instances -->
-            <img id="pizza-olives-1" src="../images/pizza-olives.PNG" alt="Pizza Olives 1" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500">
-            <img id="pizza-olives-2" src="../images/pizza-olives.PNG" alt="Pizza Olives 2" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500">
-            <img id="pizza-olives-3" src="../images/pizza-olives.PNG" alt="Pizza Olives 3" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500">
+            <img id="pizza-olives-1" src="../images/pizza-olives.PNG" alt="Pizza Olives 1" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500" data-letter="a" data-number="1">
+            <img id="pizza-olives-2" src="../images/pizza-olives.PNG" alt="Pizza Olives 2" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500" data-letter="a" data-number="2">
+            <img id="pizza-olives-3" src="../images/pizza-olives.PNG" alt="Pizza Olives 3" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500" data-letter="a" data-number="3">
+            <img id="pizza-olives-4" src="../images/pizza-olives.PNG" alt="Pizza Olives 4" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500" data-letter="a" data-number="4">
             
             <!-- Onion instances -->
-            <img id="pizza-onion-1" src="../images/pizza-onion.PNG" alt="Pizza Onion 1" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500">
-            <img id="pizza-onion-2" src="../images/pizza-onion.PNG" alt="Pizza Onion 2" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500">
-            <img id="pizza-onion-3" src="../images/pizza-onion.PNG" alt="Pizza Onion 3" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500">
+            <img id="pizza-onion-1" src="../images/pizza-onion.PNG" alt="Pizza Onion 1" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500" data-letter="a" data-number="1">
+            <img id="pizza-onion-2" src="../images/pizza-onion.PNG" alt="Pizza Onion 2" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500" data-letter="a" data-number="2">
+            <img id="pizza-onion-3" src="../images/pizza-onion.PNG" alt="Pizza Onion 3" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500" data-letter="a" data-number="3">
+            <img id="pizza-onion-4" src="../images/pizza-onion.PNG" alt="Pizza Onion 4" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500" data-letter="a" data-number="4">
             
             <!-- Goat cheese instances -->
-            <img id="pizza-goat-1" src="../images/pizza-goat.PNG" alt="Pizza Goat Cheese 1" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500">
-            <img id="pizza-goat-2" src="../images/pizza-goat.PNG" alt="Pizza Goat Cheese 2" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500">
-            <img id="pizza-goat-3" src="../images/pizza-goat.PNG" alt="Pizza Goat Cheese 3" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500">
+            <img id="pizza-goat-1" src="../images/pizza-goat.PNG" alt="Pizza Goat Cheese 1" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500" data-letter="a" data-number="1">
+            <img id="pizza-goat-2" src="../images/pizza-goat.PNG" alt="Pizza Goat Cheese 2" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500" data-letter="a" data-number="2">
+            <img id="pizza-goat-3" src="../images/pizza-goat.PNG" alt="Pizza Goat Cheese 3" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500" data-letter="a" data-number="3">
+            <img id="pizza-goat-4" src="../images/pizza-goat.PNG" alt="Pizza Goat Cheese 4" class="absolute inset-0 w-full h-full object-contain hidden transition-transform duration-500" data-letter="a" data-number="4">
           </div>
         </div>
       </div>
@@ -110,19 +113,19 @@
             <label class="block font-semibold mb-3 text-lg">תוספות בחינם</label>
             <div class="space-y-3">
               <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                <input type="checkbox" name="pizzaDish" class="ml-3" />
+                <input type="checkbox" name="pizzaDish" class="ml-3" data-letter="a" data-number="1" />
                 <div class="flex-1">
                   <span class="text-md">בצק</span>
                 </div>
               </label>
               <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                <input type="checkbox" name="pizzaDish" class="ml-3" />
+                <input type="checkbox" name="pizzaDish" class="ml-3" data-letter="a" data-number="1" />
                 <div class="flex-1">
                   <span class="text-md">רוטב עגבניות</span>
                 </div>
               </label>
               <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                <input type="checkbox" name="pizzaDish" class="ml-3" />
+                <input type="checkbox" name="pizzaDish" class="ml-3" data-letter="a" data-number="1" />
                 <div class="flex-1">
                   <span class="text-md">מוצרלה</span>
                 </div>
@@ -145,19 +148,19 @@
             <div>
               <div class="space-y-3">
                 <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <input type="checkbox" name="pizzaDish" class="ml-3" data-letter="a" data-number="1" />
                   <div class="flex-1">
                     <span class="text-md">זיתים שחורים</span>
                   </div>
                 </label>
                 <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <input type="checkbox" name="pizzaDish" class="ml-3" data-letter="a" data-number="1" />
                   <div class="flex-1">
                     <span class="text-md">בצל סגול</span>
                   </div>
                 </label>
                 <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <input type="checkbox" name="pizzaDish" class="ml-3" data-letter="a" data-number="1" />
                   <div class="flex-1">
                     <span class="text-md">גבינת עזים</span>
                   </div>
@@ -178,25 +181,25 @@
             <div>
               <div class="space-y-3">
                 <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <input type="checkbox" name="pizzaDish" class="ml-3" data-letter="b" data-number="1" />
                   <div class="flex-1">
                     <span class="text-md">לסובב את הפיצה ב-90 מעלות</span>
                   </div>
                 </label>
                 <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <input type="checkbox" name="pizzaDish" class="ml-3" data-letter="a" data-number="2" />
                   <div class="flex-1">
                     <span class="text-md">זיתים שחורים</span>
                   </div>
                 </label>
                 <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <input type="checkbox" name="pizzaDish" class="ml-3" data-letter="a" data-number="2" />
                   <div class="flex-1">
                     <span class="text-md">בצל סגול</span>
                   </div>
                 </label>
                 <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <input type="checkbox" name="pizzaDish" class="ml-3" data-letter="a" data-number="2" />
                   <div class="flex-1">
                     <span class="text-md">גבינת עזים</span>
                   </div>
@@ -217,25 +220,25 @@
             <div>
               <div class="space-y-3">
                 <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <input type="checkbox" name="pizzaDish" class="ml-3" data-letter="b" data-number="2" />
                   <div class="flex-1">
                     <span class="text-md">לסובב את הפיצה ב-90 מעלות</span>
                   </div>
                 </label>
                 <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <input type="checkbox" name="pizzaDish" class="ml-3" data-letter="a" data-number="3" />
                   <div class="flex-1">
                     <span class="text-md">זיתים שחורים</span>
                   </div>
                 </label>
                 <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <input type="checkbox" name="pizzaDish" class="ml-3" data-letter="a" data-number="3" />
                   <div class="flex-1">
                     <span class="text-md">בצל סגול</span>
                   </div>
                 </label>
                 <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <input type="checkbox" name="pizzaDish" class="ml-3" data-letter="a" data-number="3" />
                   <div class="flex-1">
                     <span class="text-md">גבינת עזים</span>
                   </div>
@@ -256,25 +259,25 @@
             <div>
               <div class="space-y-3">
                 <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <input type="checkbox" name="pizzaDish" class="ml-3" data-letter="b" data-number="3" />
                   <div class="flex-1">
                     <span class="text-md">לסובב את הפיצה ב-90 מעלות</span>
                   </div>
                 </label>
                 <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <input type="checkbox" name="pizzaDish" class="ml-3" data-letter="a" data-number="4" />
                   <div class="flex-1">
                     <span class="text-md">זיתים שחורים</span>
                   </div>
                 </label>
                 <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <input type="checkbox" name="pizzaDish" class="ml-3" data-letter="a" data-number="4" />
                   <div class="flex-1">
                     <span class="text-md">בצל סגול</span>
                   </div>
                 </label>
                 <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                  <input type="checkbox" name="pizzaDish" class="ml-3" />
+                  <input type="checkbox" name="pizzaDish" class="ml-3" data-letter="a" data-number="4" />
                   <div class="flex-1">
                     <span class="text-md">גבינת עזים</span>
                   </div>
@@ -316,6 +319,13 @@
   </footer>
 
   <script>
+    // Global variables
+    let rotationStates = {
+      b1: false,
+      b2: false,
+      b3: false
+    };
+
     function showPopup() {
       document.getElementById('popup').classList.remove('hidden');
     }
@@ -354,6 +364,7 @@
         
         // Check all checkboxes for specific toppings
         const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+        console.log('Total checkboxes found:', allCheckboxes.length);
         
         // Free toppings
         const doughChecked = doughCheckbox.checked;
@@ -367,26 +378,59 @@
           goat: []
         };
         
+        // Reset rotation states
+        rotationStates = {
+          b1: false,
+          b2: false,
+          b3: false
+        };
+        
         // Process each checkbox and track toppings
         allCheckboxes.forEach((checkbox, index) => {
           const label = checkbox.closest('label');
           if (label) {
             const text = label.textContent.trim();
             
+            // Debug: Log all checkboxes with their data attributes
+            console.log(`Checkbox ${index}:`, {
+              text: text.substring(0, 20) + '...',
+              dataLetter: checkbox.dataset.letter,
+              dataNumber: checkbox.dataset.number,
+              checked: checkbox.checked
+            });
+            
             if (text.includes('זיתים שחורים') && checkbox.checked) {
-              toppingInstances.olives.push(0); // No rotation
+              const number = parseInt(checkbox.dataset.number);
+              toppingInstances.olives.push(number);
             }
             
             if (text.includes('בצל סגול') && checkbox.checked) {
-              toppingInstances.onion.push(0); // No rotation
+              const number = parseInt(checkbox.dataset.number);
+              toppingInstances.onion.push(number);
             }
             
             if (text.includes('גבינת עזים') && checkbox.checked) {
-              toppingInstances.goat.push(0); // No rotation
+              const number = parseInt(checkbox.dataset.number);
+              toppingInstances.goat.push(number);
+            }
+
+            // Handle rotation checkboxes (data-letter="b")
+            if (checkbox.dataset.letter === 'b') {
+              const number = checkbox.dataset.number;
+              console.log(`Found rotation checkbox: b${number}, checked: ${checkbox.checked}`);
+              if (number === '1') {
+                rotationStates.b1 = checkbox.checked;
+              } else if (number === '2') {
+                rotationStates.b2 = checkbox.checked;
+              } else if (number === '3') {
+                rotationStates.b3 = checkbox.checked;
+              }
+              console.log(`Rotation checkbox b${number} ${checkbox.checked ? 'checked' : 'unchecked'}`);
             }
           }
         });
         
+        console.log('Rotation states:', rotationStates);
         console.log('Dough checked:', doughChecked);
         console.log('Tomato checked:', tomatoChecked);
         console.log('Cheese checked:', cheeseChecked);
@@ -424,40 +468,43 @@
 
         // Apply individual topping visibility
         applyToppingVisibility();
+        
+        // Apply cumulative rotations
+        applyRotations();
       }
 
       function applyToppingVisibility() {
         // Apply olives visibility
-        for (let i = 0; i < 3; i++) {
-          const oliveImg = document.getElementById(`pizza-olives-${i + 1}`);
-          if (i < toppingInstances.olives.length) {
+        for (let i = 1; i <= 4; i++) {
+          const oliveImg = document.getElementById(`pizza-olives-${i}`);
+          if (toppingInstances.olives.includes(i)) {
             oliveImg.classList.remove('hidden');
             oliveImg.style.transform = 'rotate(0deg)'; // No rotation
-            console.log(`Showing olives ${i + 1}`);
+            console.log(`Showing olives ${i}`);
           } else {
             oliveImg.classList.add('hidden');
           }
         }
         
         // Apply onion visibility
-        for (let i = 0; i < 3; i++) {
-          const onionImg = document.getElementById(`pizza-onion-${i + 1}`);
-          if (i < toppingInstances.onion.length) {
+        for (let i = 1; i <= 4; i++) {
+          const onionImg = document.getElementById(`pizza-onion-${i}`);
+          if (toppingInstances.onion.includes(i)) {
             onionImg.classList.remove('hidden');
             onionImg.style.transform = 'rotate(0deg)'; // No rotation
-            console.log(`Showing onion ${i + 1}`);
+            console.log(`Showing onion ${i}`);
           } else {
             onionImg.classList.add('hidden');
           }
         }
         
         // Apply goat cheese visibility
-        for (let i = 0; i < 3; i++) {
-          const goatImg = document.getElementById(`pizza-goat-${i + 1}`);
-          if (i < toppingInstances.goat.length) {
+        for (let i = 1; i <= 4; i++) {
+          const goatImg = document.getElementById(`pizza-goat-${i}`);
+          if (toppingInstances.goat.includes(i)) {
             goatImg.classList.remove('hidden');
             goatImg.style.transform = 'rotate(0deg)'; // No rotation
-            console.log(`Showing goat cheese ${i + 1}`);
+            console.log(`Showing goat cheese ${i}`);
           } else {
             goatImg.classList.add('hidden');
           }
@@ -482,6 +529,37 @@
       toggleButton.classList.remove('text-blue-600', 'hover:text-blue-800');
       toggleButton.classList.add('text-gray-500', 'cursor-not-allowed');
       toggleButton.disabled = true;
+    }
+
+    // Function to apply cumulative rotations to images
+    function applyRotations() {
+      console.log('applyRotations called');
+      console.log('Current rotation states:', rotationStates);
+      
+      const allImages = document.querySelectorAll('img[data-letter][data-number]');
+      console.log('Found images with data attributes:', allImages.length);
+      
+      allImages.forEach(img => {
+        const imgNumber = parseInt(img.dataset.number);
+        let totalRotation = 0;
+        
+        // Check each rotation checkbox and apply rotation if image number is <= checkbox number
+        if (rotationStates.b1 && imgNumber <= 1) {
+          totalRotation += 90;
+          console.log(`Adding 90° from b1 for image ${img.id}`);
+        }
+        if (rotationStates.b2 && imgNumber <= 2) {
+          totalRotation += 90;
+          console.log(`Adding 90° from b2 for image ${img.id}`);
+        }
+        if (rotationStates.b3 && imgNumber <= 3) {
+          totalRotation += 90;
+          console.log(`Adding 90° from b3 for image ${img.id}`);
+        }
+        
+        img.style.transform = `rotate(${totalRotation}deg)`;
+        console.log(`Image ${img.id} rotated ${totalRotation}° (number: ${imgNumber})`);
+      });
     }
   </script>
 
