@@ -171,6 +171,94 @@
       </div>
     </div>
 
+    <!-- Employee Management Section -->
+    <div class="bg-white rounded-2xl shadow p-6 mt-6">
+      <h2 class="text-lg font-semibold mb-4 text-gray-800">ניהול עובדים</h2>
+      
+      <!-- Employee List -->
+      <div class="space-y-3 mb-6">
+        <div class="flex items-center justify-between p-3 rounded-lg border-2 border-gray-200 bg-gray-50">
+          <div class="flex items-center">
+            <div class="h-8 w-8 rounded-full ml-3 bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center">
+              <span class="text-white text-sm">👩</span>
+            </div>
+            <div>
+              <span class="text-sm font-medium text-gray-900">דנה</span>
+              <p class="text-xs text-gray-600">מלצרית</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <span class="inline-block bg-green-200 text-green-800 px-2 py-1 text-xs rounded mr-2">פעיל</span>
+            <button class="text-red-600 hover:text-red-800 text-sm font-medium" onclick="showFiringModal('דנה')">פיטורין</button>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between p-3 rounded-lg border-2 border-gray-200 bg-gray-50">
+          <div class="flex items-center">
+            <div class="h-8 w-8 rounded-full ml-3 bg-gradient-to-r from-blue-500 to-green-600 flex items-center justify-center">
+              <span class="text-white text-sm">👨</span>
+            </div>
+            <div>
+              <span class="text-sm font-medium text-gray-900">אסף</span>
+              <p class="text-xs text-gray-600">טבח</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <span class="inline-block bg-green-200 text-green-800 px-2 py-1 text-xs rounded mr-2">פעיל</span>
+            <button class="text-red-600 hover:text-red-800 text-sm font-medium" onclick="showFiringModal('אסף')">פיטורין</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add New Employee Button -->
+      <button class="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors duration-200" onclick="addNewEmployee()">
+        + הוסף עובד חדש
+      </button>
+    </div>
+
+    <!-- Firing Letter Modal -->
+    <div id="firingModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+      <div class="bg-white rounded-2xl p-6 max-w-md w-full mx-4">
+        <h3 class="text-lg font-semibold mb-4 text-gray-800">מכתב פיטורין</h3>
+        
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-700 mb-2">עובד:</label>
+          <input type="text" id="employeeName" class="w-full p-2 border border-gray-300 rounded-lg" readonly>
+        </div>
+        
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-700 mb-2">תאריך:</label>
+          <input type="date" id="firingDate" class="w-full p-2 border border-gray-300 rounded-lg">
+        </div>
+        
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-700 mb-2">סיבת הפיטורין:</label>
+          <select id="firingReason" class="w-full p-2 border border-gray-300 rounded-lg">
+            <option value="">בחר סיבה</option>
+            <option value="ביצועים לא מספקים">ביצועים לא מספקים</option>
+            <option value="הפרת משמעת">הפרת משמעת</option>
+            <option value="הפחתת כוח אדם">הפחתת כוח אדם</option>
+            <option value="התנהגות לא הולמת">התנהגות לא הולמת</option>
+            <option value="אחר">אחר</option>
+          </select>
+        </div>
+        
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-700 mb-2">הערות נוספות:</label>
+          <textarea id="firingNotes" rows="3" class="w-full p-2 border border-gray-300 rounded-lg" placeholder="הוסף הערות נוספות..."></textarea>
+        </div>
+        
+        <div class="flex space-x-3 space-x-reverse">
+          <button onclick="closeFiringModal()" class="flex-1 bg-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-400 transition-colors duration-200">
+            ביטול
+          </button>
+          <button onclick="sendFiringLetter()" class="flex-1 bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors duration-200">
+            שלח מכתב פיטורין
+          </button>
+        </div>
+      </div>
+    </div>
+
     <!-- Admin Logs Section -->
     <div class="bg-white rounded-2xl shadow p-6 mt-6">
       <div class="flex items-center justify-between cursor-pointer" onclick="toggleLogs()">
@@ -253,6 +341,105 @@
     function togglePushNotifications() {
       const isEnabled = document.getElementById('pushNotifications').checked;
       addLog(`התראות דחיפה ${isEnabled ? 'הופעלו' : 'הושבתו'}`);
+    }
+
+    // Employee management functionality
+    function showFiringModal(employeeName) {
+      document.getElementById('employeeName').value = employeeName;
+      document.getElementById('firingDate').value = new Date().toISOString().split('T')[0];
+      document.getElementById('firingModal').classList.remove('hidden');
+    }
+
+    function closeFiringModal() {
+      document.getElementById('firingModal').classList.add('hidden');
+      // Clear form
+      document.getElementById('firingReason').value = '';
+      document.getElementById('firingNotes').value = '';
+    }
+
+    function sendFiringLetter() {
+      const employeeName = document.getElementById('employeeName').value;
+      const firingDate = document.getElementById('firingDate').value;
+      const firingReason = document.getElementById('firingReason').value;
+      const firingNotes = document.getElementById('firingNotes').value;
+
+      if (!firingReason) {
+        alert('אנא בחר סיבת פיטורין');
+        return;
+      }
+
+      // Create firing letter content
+      const firingLetter = `
+        מכתב פיטורין
+        
+        אל: ${employeeName}
+        תאריך: ${firingDate}
+        
+        סיבת הפיטורין: ${firingReason}
+        ${firingNotes ? `הערות נוספות: ${firingNotes}` : ''}
+        
+        אנו מצטערים להודיע לך כי החלטנו לסיים את העסקתך בתאריך ${firingDate}.
+        
+        אנא החזר את כל הציוד והמפתחות עד לתאריך זה.
+        
+        בהצלחה בהמשך דרכך.
+      `;
+
+      // Show the firing letter
+      alert(`מכתב פיטורין נשלח בהצלחה!\n\n${firingLetter}`);
+      
+      // Update employee status to fired
+      updateEmployeeStatus(employeeName, 'פוטר');
+      
+      // Add to logs
+      addLog(`מכתב פיטורין נשלח לעובד: ${employeeName}`);
+      
+      // Close modal
+      closeFiringModal();
+    }
+
+    function updateEmployeeStatus(employeeName, status) {
+      // Find the employee element and update their status
+      const employeeElements = document.querySelectorAll('.space-y-3 > div');
+      employeeElements.forEach(element => {
+        const nameElement = element.querySelector('.text-sm.font-medium');
+        if (nameElement && nameElement.textContent === employeeName) {
+          const statusSpan = element.querySelector('.inline-block');
+          const actionButton = element.querySelector('button');
+          
+          if (status === 'פוטר') {
+            statusSpan.textContent = 'פוטר';
+            statusSpan.className = 'inline-block bg-red-200 text-red-800 px-2 py-1 text-xs rounded mr-2';
+            actionButton.textContent = 'הפעל מחדש';
+            actionButton.className = 'text-green-600 hover:text-green-800 text-sm font-medium';
+            actionButton.onclick = () => reactivateEmployee(employeeName);
+          }
+        }
+      });
+    }
+
+    function reactivateEmployee(employeeName) {
+      const employeeElements = document.querySelectorAll('.space-y-3 > div');
+      employeeElements.forEach(element => {
+        const nameElement = element.querySelector('.text-sm.font-medium');
+        if (nameElement && nameElement.textContent === employeeName) {
+          const statusSpan = element.querySelector('.inline-block');
+          const actionButton = element.querySelector('button');
+          
+          statusSpan.textContent = 'פעיל';
+          statusSpan.className = 'inline-block bg-green-200 text-green-800 px-2 py-1 text-xs rounded mr-2';
+          actionButton.textContent = 'פיטורין';
+          actionButton.className = 'text-red-600 hover:text-red-800 text-sm font-medium';
+          actionButton.onclick = () => showFiringModal(employeeName);
+        }
+      });
+      
+      addLog(`עובד ${employeeName} הופעל מחדש`);
+    }
+
+    function addNewEmployee() {
+      alert('פונקציונליות להוספת עובד חדש תתווסף בקרוב!');
+      addLog('ניסיון להוסיף עובד חדש');
     }
 
     // Logs functionality
