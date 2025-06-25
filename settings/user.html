@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>הגדרות - 2 Bis or Not 2 Bis</title>
-  <link href="styles.css" rel="stylesheet" />
+  <link href="../styles.css" rel="stylesheet" />
   <style>
     html,
     body {
@@ -24,14 +24,14 @@
   <header class="bg-yellow-500">
     <div class="max-w-6xl mx-auto px-4 md:px-32 flex justify-between items-center text-white py-4">
       <div class="flex items-center">
-        <a href="index.html" class="flex items-center">
-          <img src="images/logo.PNG" alt="Logo" class="h-10 w-auto ml-2" />
+        <a href="../index.html" class="flex items-center">
+          <img src="../images/logo.PNG" alt="Logo" class="h-10 w-10 ml-2" />
           <div class="text-2xl font-bold"><span dir="ltr">2 Bis or Not 2 Bis</span></div>
         </a>
       </div>
 
       <!-- Back Button -->
-      <a href="index.html" class="text-white hover:text-gray-200 font-semibold">
+      <a href="../index.html" class="text-white hover:text-gray-200 font-semibold">
         ← חזור לדף הבית
       </a>
     </div>
@@ -87,7 +87,7 @@
       <!-- Current Selection Display -->
       <div class="mb-4 p-4 bg-gray-50 rounded-lg">
         <div class="flex items-center">
-          <img src="images/delivery/random.PNG" alt="Selected Delivery Man" id="selectedImage" class="h-12 w-12 rounded-full ml-3" />
+          <img src="../images/delivery/random.PNG" alt="Selected Delivery Man" id="selectedImage" class="h-12 w-12 rounded-full ml-3" />
           <div>
             <h3 class="text-base font-medium text-gray-900" id="selectedName">אקראי</h3>
             <p class="text-sm text-gray-600" id="selectedInfo">שליח אקראי מהמאגר</p>
@@ -101,7 +101,7 @@
           <input type="radio" id="deliveryRandom" name="deliveryMan" value="random" class="w-4 h-4 text-yellow-500 bg-gray-100 border-gray-300 focus:ring-yellow-500" checked>
           <label for="deliveryRandom" class="mr-3 flex-1 cursor-pointer">
             <div class="flex items-center">
-              <img src="images/delivery/random.PNG" alt="Random Delivery" class="h-8 w-8 rounded-full ml-3" />
+              <img src="../images/delivery/random.PNG" alt="Random Delivery" class="h-8 w-8 rounded-full ml-3" />
               <div>
                 <span class="text-sm font-medium text-gray-900">אקראי</span>
                 <p class="text-xs text-gray-600">שליח אקראי מהמאגר</p>
@@ -114,7 +114,7 @@
           <input type="radio" id="deliveryElad" name="deliveryMan" value="elad" class="w-4 h-4 text-yellow-500 bg-gray-100 border-gray-300 focus:ring-yellow-500">
           <label for="deliveryElad" class="mr-3 flex-1 cursor-pointer">
             <div class="flex items-center">
-              <img src="images/delivery/elad.PNG" alt="Elad Delivery" class="h-8 w-8 rounded-full ml-3" />
+              <img src="../images/delivery/elad.PNG" alt="Elad Delivery" class="h-8 w-8 rounded-full ml-3" />
               <div>
                 <span class="text-sm font-medium text-gray-900">אלעד</span>
                 <p class="text-xs text-gray-600">חייכן, טועם מהצ׳יפס</p>
@@ -127,7 +127,7 @@
             <input type="radio" id="deliveryAchav" name="deliveryMan" value="achav" class="w-4 h-4 text-yellow-500 bg-gray-100 border-gray-300 focus:ring-yellow-500">
             <label for="deliveryAchav" class="mr-3 flex-1 cursor-pointer">
               <div class="flex items-center">
-                <img src="images/delivery/achav.PNG" alt="Achav Delivery" class="h-8 w-8 rounded-full ml-3" />
+                <img src="../images/delivery/achav.PNG" alt="Achav Delivery" class="h-8 w-8 rounded-full ml-3" />
                 <div>
                   <span class="text-sm font-medium text-gray-900">אחאב</span>
                   <p class="text-xs text-gray-600">ההזמנה תגיע בשק בד</p>
@@ -140,7 +140,7 @@
           <input type="radio" id="deliveryJoker" name="deliveryMan" value="joker" class="w-4 h-4 text-yellow-500 bg-gray-100 border-gray-300 focus:ring-yellow-500">
           <label for="deliveryJoker" class="mr-3 flex-1 cursor-pointer">
             <div class="flex items-center">
-              <img src="images/delivery/joker.PNG" alt="Joker Delivery" class="h-8 w-8 rounded-full ml-3" />
+              <img src="../images/delivery/joker.PNG" alt="Joker Delivery" class="h-8 w-8 rounded-full ml-3" />
               <div>
                 <span class="text-sm font-medium text-gray-900">ג׳וקר</span>
                 <p class="text-xs text-gray-600">ג׳וקר</p>
@@ -149,6 +149,19 @@
           </label>
         </div>
       </div>
+    </div>
+
+    <!-- Admin Access Section -->
+    <div class="bg-white rounded-2xl shadow p-6 mt-6">
+      <h2 class="text-lg font-semibold mb-4 text-gray-800">הגדרות מנהל</h2>
+      
+      <a href="admin.html" class="inline-flex items-center justify-center w-full bg-red-600 text-white py-3 px-4 rounded-lg hover:bg-red-700 transition-colors duration-200" onclick="checkAdminPassword(event)">
+        <svg class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        הגדרות מנהל
+      </a>
     </div>
 
     <!-- National Anthem Section -->
@@ -162,7 +175,7 @@
       
       <!-- Anthem Content -->
       <div id="anthemContent" class="hidden mt-4">
-        <div class="relative p-6 rounded-lg overflow-hidden" style="background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('images/national-flag.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 300px;">
+        <div class="relative p-6 rounded-lg overflow-hidden" style="background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('../images/national-flag.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 300px;">
           <div class="text-center space-y-4">
             <h3 class="text-xl font-bold text-gray-900 mb-4">התקווה</h3>
             
@@ -269,6 +282,16 @@
       } else {
         anthemContent.classList.add('hidden');
         arrow.classList.remove('transform', 'rotate-180');
+      }
+    }
+
+    function checkAdminPassword(event) {
+      event.preventDefault();
+      const password = prompt("אנא הזן סיסמה למנהל:");
+      if (password === "password") {
+        window.location.href = "admin.html";
+      } else {
+        alert("סיסמה שגויה.");
       }
     }
   </script>
