@@ -42,16 +42,10 @@
     
     <!-- Restaurant Header -->
     <div class="relative mb-6">
-      <div class="w-full h-48 md:h-64 bg-gradient-to-r from-pink-400 to-purple-500 rounded-2xl flex items-center justify-center">
-        <div class="text-center text-white">
-          <div class="text-8xl mb-4">🍰</div>
-          <div class="text-3xl font-bold">קווקווה דה לה וין</div>
-        </div>
-      </div>
+      <img src="../images/banner/levine.PNG" alt="Restaurant Banner"
+        class="w-full h-48 md:h-64 object-cover object-center rounded-2xl" />
       <div class="bg-white rounded-2xl p-1 shadow absolute -bottom-12 left-6 inline-block">
-        <div class="h-24 w-24 bg-gradient-to-r from-pink-400 to-purple-500 rounded-xl flex items-center justify-center">
-          <div class="text-4xl">🍰</div>
-        </div>
+        <img src="../images/logo/levine.PNG" alt="Restaurant Logo" class="h-24 w-24 object-contain rounded-xl">
       </div>
     </div>
 
@@ -60,7 +54,7 @@
       <!-- Restaurant Info -->
       <div class="pt-16 pb-6">
         <h1 class="text-2xl font-bold mb-2">קווקווה דה לה וין</h1>
-        <h2 class="text-gray-600 font-bold mb-2">קונדיטוריה</h2>
+        <h2 class="text-gray-600 font-bold mb-2">פאטיסרי</h2>
         <h2 class="text-gray-600 mb-6">נחלת בנימין</h2>
 
         <!-- Delivery Time -->
@@ -77,24 +71,21 @@
             <label class="block font-semibold mb-3 text-lg">עוגות</label>
             <div class="space-y-3">
               <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                <input type="radio" name="cakeType" class="ml-3" />
+                <input type="checkbox" class="ml-3" />
                 <div class="flex-1">
                   <span class="text-lg">עוגת שוקולד</span>
-                  <span class="text-sm text-gray-600 block">עוגת שוקולד עשירה עם קרם שוקולד</span>
                 </div>
               </label>
               <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                <input type="radio" name="cakeType" class="ml-3" />
+                <input type="checkbox" class="ml-3" />
                 <div class="flex-1">
                   <span class="text-lg">עוגת גבינה</span>
-                  <span class="text-sm text-gray-600 block">עוגת גבינה קלאסית עם ריבת תות</span>
                 </div>
               </label>
               <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-                <input type="radio" name="cakeType" class="ml-3" />
+                <input type="checkbox" class="ml-3" />
                 <div class="flex-1">
                   <span class="text-lg">עוגת תפוחים</span>
-                  <span class="text-sm text-gray-600 block">עוגת תפוחים עם קינמון וסוכר חום</span>
                 </div>
               </label>
             </div>
@@ -107,21 +98,18 @@
                 <input type="checkbox" class="ml-3" />
                 <div class="flex-1">
                   <span class="text-lg">קרואסון</span>
-                  <span class="text-sm text-gray-600 block">קרואסון חמאה קלאסי</span>
                 </div>
               </label>
               <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
                 <input type="checkbox" class="ml-3" />
                 <div class="flex-1">
                   <span class="text-lg">מאפין שוקולד</span>
-                  <span class="text-sm text-gray-600 block">מאפין שוקולד עשיר עם שבבי שוקולד</span>
                 </div>
               </label>
               <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
                 <input type="checkbox" class="ml-3" />
                 <div class="flex-1">
                   <span class="text-lg">בראוניז</span>
-                  <span class="text-sm text-gray-600 block">בראוניז שוקולד כפול עם אגוזי מלך</span>
                 </div>
               </label>
             </div>
@@ -188,7 +176,8 @@
   </div>
 
   <footer class="text-center text-sm text-gray-400 py-4 pb-2">
-    אתר זה הוא פרודיה בלבד
+    אתר זה הוא פרודיה בלבד<br>
+    <span class="text-xs">Dana Petrank</span>
   </footer>
 
   <script>
