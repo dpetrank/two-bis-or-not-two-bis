@@ -16,6 +16,39 @@
       box-sizing: border-box;
     }
     
+    /* Digital Font Import */
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+    
+    .digital-font {
+      font-family: 'Orbitron', monospace;
+    }
+    
+    .digital-text {
+      color: #00ff00;
+      text-shadow: 0 0 5px #00ff00;
+    }
+    
+    /* Digital Logo Styles */
+    .digital-logo {
+      background: #000;
+      border: 2px solid #00ff00;
+    }
+    
+    /* Digital Banner Styles */
+    .digital-banner {
+      background: #000;
+      border: 2px solid #00ff00;
+    }
+    
+    .digital-glow {
+      text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+    }
+    
+    .digital-border {
+      border: 2px solid #00ff00;
+      box-shadow: 0 0 10px #00ff00, inset 0 0 10px rgba(0, 255, 0, 0.1);
+    }
+    
     .calculator {
       background: linear-gradient(145deg, #f0f0f0, #cacaca);
       border-radius: 20px;
@@ -111,15 +144,14 @@
     
     <!-- Restaurant Header -->
     <div class="relative mb-6">
-      <div class="w-full h-48 md:h-64 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center">
-        <div class="text-center text-white">
-          <h1 class="text-4xl font-bold mb-2">המחשבון</h1>
-          <p class="text-xl">מחשבון</p>
+      <div class="w-full h-48 md:h-64 digital-banner rounded-2xl flex items-center justify-center">
+        <div class="text-center digital-text relative z-10">
+          <div class="text-6xl mb-4 font-bold digital-font">המחשבון</div>
         </div>
       </div>
       <div class="bg-white rounded-2xl p-1 shadow absolute -bottom-12 left-6 inline-block">
-        <div class="h-24 w-24 bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl flex items-center justify-center">
-          <span class="text-white text-2xl font-bold">🧮</span>
+        <div class="h-24 w-24 digital-logo rounded-xl flex items-center justify-center">
+          <div class="text-4xl digital-text font-bold digital-font">C</div>
         </div>
       </div>
     </div>
@@ -175,6 +207,7 @@
               </div>
             </div>
           </div>
+        </form>
 
         <div class="text-xs font-bold text-gray-800 text-center mt-4">
           * מחשבון
